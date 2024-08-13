@@ -21,5 +21,5 @@ class NegocioSerializer(serializers.ModelSerializer):
 class ResenaSerializer(serializers.ModelSerializer):
     negocio = NegocioSerializer(many=False, read_only=True)
     class Meta:
-        model = Negocio
+        model = Resena
         fields = "__all__"

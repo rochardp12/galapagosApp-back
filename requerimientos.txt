@@ -1,0 +1,6 @@
+Django==5.0.6
+djangorestframework==3.15.1
+psycopg2==2.9.9
+DateTime==5.4
+drf-yasg==1.21.7
+django-cors-headers==4.3.1

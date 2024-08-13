@@ -1,0 +1,4 @@
+env/
+app/__pycache__/
+app/migrations/__pycache__/
+app/migrations/0001_initial.py

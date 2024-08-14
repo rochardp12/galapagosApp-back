@@ -1,0 +1,560 @@
+[
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "permissions",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "routers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "isExtraImport": true,
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "action",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "re_path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "get_schema_view",
+        "importPath": "drf_yasg.views",
+        "description": "drf_yasg.views",
+        "isExtraImport": true,
+        "detail": "drf_yasg.views",
+        "documentation": {}
+    },
+    {
+        "label": "openapi",
+        "importPath": "drf_yasg",
+        "description": "drf_yasg",
+        "isExtraImport": true,
+        "detail": "drf_yasg",
+        "documentation": {}
+    },
+    {
+        "label": "views",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "kind": 6,
+        "importPath": "app.apps",
+        "description": "app.apps",
+        "peekOfCode": "class AppConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'app'",
+        "detail": "app.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Isla",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Isla(models.Model):\n    nombre = models.CharField(max_length=30)\n    calificacion_tres = models.IntegerField()\n    calificacion_dos = models.IntegerField()\n    calificacion_uno = models.IntegerField()\n    class Meta:\n        db_table = 'isla'\nclass TipoNegocio(models.Model):\n    tipo = models.CharField(max_length=30)\n    class Meta:",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "TipoNegocio",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class TipoNegocio(models.Model):\n    tipo = models.CharField(max_length=30)\n    class Meta:\n        db_table = 'tipo_negocio'\nclass Negocio(models.Model):\n    nombre = models.CharField(max_length=30)\n    servicios = models.CharField(max_length=100)\n    hora_inicio = models.TimeField()\n    hora_fin = models.TimeField()\n    direccion = models.CharField(max_length=50)",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Negocio",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Negocio(models.Model):\n    nombre = models.CharField(max_length=30)\n    servicios = models.CharField(max_length=100)\n    hora_inicio = models.TimeField()\n    hora_fin = models.TimeField()\n    direccion = models.CharField(max_length=50)\n    imagen = models.CharField(max_length=300)\n    tipo_negocio = models.ForeignKey(TipoNegocio, on_delete=models.CASCADE)\n    isla = models.ForeignKey(Isla, on_delete=models.CASCADE)\n    class Meta:",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Resena",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Resena(models.Model):\n    descripcion = models.CharField(max_length=200)\n    fecha = models.DateField()\n    hora = models.TimeField()\n    negocio = models.ForeignKey(Negocio, on_delete=models.CASCADE)\n    class Meta:\n        db_table = 'resena'\nclass Biodiversidad(models.Model):\n    nombre_comun = models.CharField(max_length=30)\n    nombre_cientifico = models.CharField(max_length=50)",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Biodiversidad",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Biodiversidad(models.Model):\n    nombre_comun = models.CharField(max_length=30)\n    nombre_cientifico = models.CharField(max_length=50)\n    dato = models.CharField(max_length=200)\n    imagen = models.CharField(max_length=300)\n    class Meta:\n        db_table = 'biodiversidad'\nclass Fauna(Biodiversidad):\n    habitat = models.CharField(max_length=50)\n    alimentacion = models.CharField(max_length=50)",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Fauna",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Fauna(Biodiversidad):\n    habitat = models.CharField(max_length=50)\n    alimentacion = models.CharField(max_length=50)\n    class Meta:\n        db_table = 'fauna'\nclass Flora(Biodiversidad):\n    distribucion = models.CharField(max_length=50)\n    usos = models.CharField(max_length=100)\n    class Meta:\n        db_table = 'flora'",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Flora",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Flora(Biodiversidad):\n    distribucion = models.CharField(max_length=50)\n    usos = models.CharField(max_length=100)\n    class Meta:\n        db_table = 'flora'",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "IslaSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class IslaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Isla\n        fields = \"__all__\"\nclass TipoNegocioSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = TipoNegocio\n        fields = \"__all__\"\nclass NegocioSerializer(serializers.ModelSerializer):\n    tipo_negocio = TipoNegocioSerializer(many=False, read_only=True)",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "TipoNegocioSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class TipoNegocioSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = TipoNegocio\n        fields = \"__all__\"\nclass NegocioSerializer(serializers.ModelSerializer):\n    tipo_negocio = TipoNegocioSerializer(many=False, read_only=True)\n    isla = IslaSerializer(many=False, read_only=True)\n    class Meta:\n        model = Negocio\n        fields = \"__all__\"",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "NegocioSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class NegocioSerializer(serializers.ModelSerializer):\n    tipo_negocio = TipoNegocioSerializer(many=False, read_only=True)\n    isla = IslaSerializer(many=False, read_only=True)\n    class Meta:\n        model = Negocio\n        fields = \"__all__\"\nclass ResenaSerializer(serializers.ModelSerializer):\n    negocio = NegocioSerializer(many=False, read_only=True)\n    class Meta:\n        model = Resena",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "ResenaSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class ResenaSerializer(serializers.ModelSerializer):\n    negocio = NegocioSerializer(many=False, read_only=True)\n    class Meta:\n        model = Resena\n        fields = \"__all__\"",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "NegocioViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class NegocioViewSet(viewsets.ModelViewSet):\n    queryset = Negocio.objects.all()\n    serializer_class = NegocioSerializer\n    @action(detail=False, methods=['get'], url_name='search_role_user')\n    def search_role_user(self, request):\n        data = Negocio.objects.all()\n        data = NegocioSerializer(data, many=True).data\n        return Response(data, status=201)\n        '''data = {\n                \"id\": 2,",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "galapagosApp.asgi",
+        "description": "galapagosApp.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "galapagosApp.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-m0u=v=5m7p)9@3))61jywzhtsjiz*#072!zz%3$0cv+0#c0f^3'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-m0u=v=5m7p)9@3))61jywzhtsjiz*#072!zz%3$0cv+0#c0f^3'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'app',",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'app',\n    'drf_yasg'\n]",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'galapagosApp.urls'",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "ROOT_URLCONF = 'galapagosApp.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'galapagosApp.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'HOST': 'localhost',\n        'PORT': 5432,\n        'NAME': 'galapagos',\n        'USER': 'postgres',",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'HOST': 'localhost',\n        'PORT': 5432,\n        'NAME': 'galapagos',\n        'USER': 'postgres',\n        'PASSWORD': 'root'\n    }\n}",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "galapagosApp.settings",
+        "description": "galapagosApp.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "galapagosApp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "galapagosApp.urls",
+        "description": "galapagosApp.urls",
+        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'negocio', views.NegocioViewSet)\nschema_view = get_schema_view(\n   openapi.Info(\n      title=\"Galapagos API\",\n      default_version='v1',\n   ),\n   public=True,\n   permission_classes=(permissions.AllowAny,),\n)",
+        "detail": "galapagosApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "schema_view",
+        "kind": 5,
+        "importPath": "galapagosApp.urls",
+        "description": "galapagosApp.urls",
+        "peekOfCode": "schema_view = get_schema_view(\n   openapi.Info(\n      title=\"Galapagos API\",\n      default_version='v1',\n   ),\n   public=True,\n   permission_classes=(permissions.AllowAny,),\n)\nurlpatterns = [\n    path('admin/', admin.site.urls),",
+        "detail": "galapagosApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "galapagosApp.urls",
+        "description": "galapagosApp.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),\n    path('api/v1/', include(router.urls)),\n]",
+        "detail": "galapagosApp.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "galapagosApp.wsgi",
+        "description": "galapagosApp.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "galapagosApp.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'galapagosApp.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "manage",
+        "documentation": {}
+    }
+]

@@ -86,9 +86,27 @@ class FaunaViewSet(viewsets.ModelViewSet):
     queryset = Fauna.objects.all()
     serializer_class = FaunaSerializer
 
+    @action(detail=False, methods=['get'], url_name='buscar_fauna')
+    def buscar_fauna(self, request):
+            data = Fauna.objects.all()
+            if not data.exists():
+                return Response({"error": "Sin fauna registrada"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = FaunaSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
+
 class FloraViewSet(viewsets.ModelViewSet):
     queryset = Flora.objects.all()
     serializer_class = FloraSerializer
+
+    @action(detail=False, methods=['get'], url_name='buscar_flora')
+    def buscar_flora(self, request):
+            data = Flora.objects.all()
+            if not data.exists():
+                return Response({"error": "Sin flora registrada"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = FloraSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
 
 class ActividadViewSet(viewsets.ModelViewSet):
     queryset = Actividad.objects.all()

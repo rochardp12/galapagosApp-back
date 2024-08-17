@@ -14,4 +14,5 @@ Framework DJANGO, conectado con PostgreSQL
 - pip install -r requerimientos.txt -> (instalar todas las dependencias necesarias)
 - python manage.py makemigrations app -> (crear migraciones en base a los modelos)
 - python manage.py migrate app -> (aplicar migraciones a la base de datos)
+- python manage.py loaddata data.json -> (cargar el archivo data.json para poblar base de datos)
 - python manage.py runserver -> (levantar el servidor con las configuraciones por defecto del settings.py)

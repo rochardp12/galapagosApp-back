@@ -6,24 +6,6 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view,action
 from django.db.models import Q
 
-
-'''class NegocioViewSet(viewsets.ModelViewSet):
-    queryset = Negocio.objects.all()
-    serializer_class = NegocioSerializer
-
-    @action(detail=False, methods=['get'], url_name='buscar_negocio_isla')
-    def buscar_negocio_isla(self, request):
-        data = Negocio.objects.all()
-        data = NegocioSerializer(data, many=True).data
-        return Response(data, status=201)
-        data = {
-                "id": 2,
-                "name": "nombre",
-                "day": "dia",
-                "time": "tiempo",
-                "performed": "yesss"}
-        return Response(data)'''
-
 class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
@@ -86,6 +68,15 @@ class ResenaViewSet(viewsets.ModelViewSet):
                 )           
         serializado = ResenaSerializer(resena).data
         return Response(serializado, status=status.HTTP_201_CREATED)
+    
+    @action(detail=False, methods=['get'], url_path=r'id_negocio/(?P<id_negocio>\d+)', url_name='buscar_resenas')
+    def buscar_resenas(self, request,id_negocio):
+            data = Resena.objects.filter(Q(negocio__id=id_negocio))
+            if not data.exists():
+                return Response({"mensaje": "Sin reseñas"}, status=status.HTTP_200_OK)
+            else:
+                data = ResenaSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
 
 class BiodiversidadViewSet(viewsets.ModelViewSet):
     queryset = Biodiversidad.objects.all()

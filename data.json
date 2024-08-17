@@ -91,5 +91,27 @@
         "fields": {
             "tipo" : "Tienda de Recuerdos"
         }
+    },
+    {
+        "model": "app.Resena",
+        "pk": 1,
+        "fields": {
+            "descripcion" : "Esto es una resena",
+            "fecha" : "2024-01-01",
+            "hora" : "9:00",
+            "negocio" : 1,
+            "usuario" : 1
+        }
+    },
+    {
+        "model": "app.Resena",
+        "pk": 2,
+        "fields": {
+            "descripcion" : "Esto es una resena 2",
+            "fecha" : "2024-02-02",
+            "hora" : "10:00",
+            "negocio" : 1,
+            "usuario" : 1
+        }
     }
 ]

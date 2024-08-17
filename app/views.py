@@ -22,7 +22,7 @@ class NegocioViewSet(viewsets.ModelViewSet):
     queryset = Negocio.objects.all()
     serializer_class = NegocioSerializer
 
-    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>\w+)', url_name='buscar_negocio_isla')
+    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>[\w\s]+)', url_name='buscar_negocio_isla')
     def buscar_negocio_isla(self, request,nombre_isla):
             data = Negocio.objects.filter(Q(isla__nombre=nombre_isla))
             if not data.exists():

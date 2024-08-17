@@ -73,7 +73,7 @@ class ResenaViewSet(viewsets.ModelViewSet):
     def buscar_resenas(self, request,id_negocio):
             data = Resena.objects.filter(Q(negocio__id=id_negocio))
             if not data.exists():
-                return Response({"mensaje": "Sin reseñas"}, status=status.HTTP_200_OK)
+                return Response({"mensaje": "Sin reseñas"}, status=status.HTTP_404_NOT_FOUND)
             else:
                 data = ResenaSerializer(data, many=True).data
                 return Response(data, status=status.HTTP_200_OK)

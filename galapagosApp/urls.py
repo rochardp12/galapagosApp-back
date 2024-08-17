@@ -25,7 +25,20 @@ from app import views
 from django.urls import path, include
 
 router = routers.DefaultRouter()
+router.register(r'usuario', views.UsuarioViewSet)
+router.register(r'isla', views.IslaViewSet)
+router.register(r'tipo_negocio', views.TipoNegocioViewSet)
 router.register(r'negocio', views.NegocioViewSet)
+router.register(r'resena', views.ResenaViewSet)
+router.register(r'biodiversidad', views.BiodiversidadViewSet)
+router.register(r'fauna', views.FaunaViewSet)
+router.register(r'flora', views.FloraViewSet)
+router.register(r'actividad', views.ActividadViewSet)
+router.register(r'guias_turisticos', views.GuiasTuristicosViewSet)
+router.register(r'ecosistema', views.EcosistemaViewSet)
+router.register(r'comentario', views.ComentarioViewSet)
+router.register(r'calificacion', views.CalificacionViewSet)
+
 
 schema_view = get_schema_view(
    openapi.Info(

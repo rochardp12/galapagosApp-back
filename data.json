@@ -1,0 +1,95 @@
+[
+    {
+        "model": "app.Usuario",
+        "pk": 1,
+        "fields": {
+            "nickname" : "grupo7",
+            "password" : "grupo7"
+        }
+    },
+    {
+        "model": "app.Isla",
+        "pk": 1,
+        "fields": {
+            "nombre": "ISABELA",
+            "calificacion_tres" : 0,
+            "calificacion_dos" : 0,
+            "calificacion_uno" : 0,
+            "descripcion" : "La isla Isabela, una isla muy bonita",
+            "imagen" : "link_imagen"
+        }
+    },
+    {
+        "model": "app.Isla",
+        "pk": 2,
+        "fields": {
+            "nombre": "SANTA CRUZ",
+            "calificacion_tres" : 0,
+            "calificacion_dos" : 0,
+            "calificacion_uno" : 0,
+            "descripcion" : "La isla Santa Cruz, una isla muy bonita",
+            "imagen" : "link_imagen"
+        }
+    },
+    {
+        "model": "app.Isla",
+        "pk": 3,
+        "fields": {
+            "nombre": "SAN CRISTOBAL",
+            "calificacion_tres" : 0,
+            "calificacion_dos" : 0,
+            "calificacion_uno" : 0,
+            "descripcion" : "La isla San Cristobal, una isla muy bonita",
+            "imagen" : "link_imagen"
+        }
+    },
+    {
+        "model": "app.Negocio",
+        "pk": 1,
+        "fields": {
+            "nombre" : "Negocio 01",
+            "servicios" : "Comida rica, cocteles",
+            "hora_inicio" : "9:30",
+            "hora_fin" : "21:00",
+            "direccion" : "Direccion cerca de aqui",
+            "imagen" : "link_imagen",
+            "tipo_negocio" : 1,
+            "isla" : 1
+        }
+    },
+    {
+        "model": "app.Negocio",
+        "pk": 2,
+        "fields": {
+            "nombre" : "Negocio 02",
+            "servicios" : "Comida rica, bebidas bien sabrosas",
+            "hora_inicio" : "9:30",
+            "hora_fin" : "21:00",
+            "direccion" : "Direccion cerca de alla",
+            "imagen" : "link_imagen",
+            "tipo_negocio" : 1,
+            "isla" : 2
+        }
+    },
+    {
+        "model": "app.TipoNegocio",
+        "pk": 1,
+        "fields": {
+            "tipo" : "Restaurante"
+        }
+    },
+    {
+        "model": "app.TipoNegocio",
+        "pk": 2,
+        "fields": {
+            "tipo" : "Hotel"
+        }
+    },
+    {
+        "model": "app.TipoNegocio",
+        "pk": 3,
+        "fields": {
+            "tipo" : "Tienda de Recuerdos"
+        }
+    }
+]

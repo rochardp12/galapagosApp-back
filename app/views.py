@@ -47,8 +47,8 @@ class NegocioViewSet(viewsets.ModelViewSet):
     queryset = Negocio.objects.all()
     serializer_class = NegocioSerializer
 
-    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>[\w\s]+)', url_name='buscar_negocio_isla')
-    def buscar_negocio_isla(self, request,nombre_isla):
+    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>[\w\s]+)', url_name='buscar_negocios_isla')
+    def buscar_negocios_isla(self, request,nombre_isla):
             data = Negocio.objects.filter(Q(isla__nombre=nombre_isla))
             if not data.exists():
                 return Response({"error": "Negocios no encontrados"}, status=status.HTTP_404_NOT_FOUND)
@@ -56,8 +56,8 @@ class NegocioViewSet(viewsets.ModelViewSet):
                 data = NegocioSerializer(data, many=True).data
                 return Response(data, status=status.HTTP_200_OK)
     
-    @action(detail=False, methods=['get'], url_path=r'nombre_tipo/(?P<nombre_tipo>\w+)', url_name='buscar_negocio_tipo')
-    def buscar_negocio_tipo(self, request,nombre_tipo):
+    @action(detail=False, methods=['get'], url_path=r'nombre_tipo/(?P<nombre_tipo>\w+)', url_name='buscar_negocios_tipo')
+    def buscar_negocios_tipo(self, request,nombre_tipo):
             data = Negocio.objects.filter(Q(tipo_negocio__tipo=nombre_tipo))
             if not data.exists():
                 return Response({"error": "Negocios no encontrados"}, status=status.HTTP_404_NOT_FOUND)
@@ -65,6 +65,15 @@ class NegocioViewSet(viewsets.ModelViewSet):
                 data = NegocioSerializer(data, many=True).data
                 return Response(data, status=status.HTTP_200_OK)
 
+    @action(detail=False, methods=['get'], url_path=r'id_negocio/(?P<id_negocio>\d+)', url_name='buscar_negocio_id')
+    def buscar_negocios_tipo(self, request,id_negocio):
+            data = Negocio.objects.filter(Q(id=id_negocio))
+            if not data.exists():
+                return Response({"error": "Negocio no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = NegocioSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
+            
 class ResenaViewSet(viewsets.ModelViewSet):
     queryset = Resena.objects.all()
     serializer_class = ResenaSerializer

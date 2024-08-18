@@ -6,28 +6,35 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view,action
 from django.db.models import Q
 
-
-'''class NegocioViewSet(viewsets.ModelViewSet):
-    queryset = Negocio.objects.all()
-    serializer_class = NegocioSerializer
-
-    @action(detail=False, methods=['get'], url_name='buscar_negocio_isla')
-    def buscar_negocio_isla(self, request):
-        data = Negocio.objects.all()
-        data = NegocioSerializer(data, many=True).data
-        return Response(data, status=201)
-        data = {
-                "id": 2,
-                "name": "nombre",
-                "day": "dia",
-                "time": "tiempo",
-                "performed": "yesss"}
-        return Response(data)'''
-
 class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
 
+    @action(detail=False, methods=['post'], url_path=r'crear_usuario/')
+    def crear_usuario(self, request):        
+        nickname = request.data['nickname']
+        password = request.data['password']
+        
+        creado = Usuario.objects.filter(Q(nickname = nickname))
+        if creado.exists():
+            return Response({"error": "Nickname ya registrado"}, status=status.HTTP_409_CONFLICT)
+
+        usuario = Usuario.objects.create(
+                    nickname = nickname,
+                    password = password,
+                )           
+        serializado = UsuarioSerializer(usuario).data
+        return Response(serializado, status=status.HTTP_201_CREATED)
+
+    @action(detail=False, methods=['get'], url_path=r'nickname/(?P<nickname>\w+)', url_name='buscar_usuario')
+    def buscar_usuario(self, request,nickname):
+            data = Usuario.objects.filter(Q(nickname=nickname))
+            if not data.exists():
+                return Response({"error": "Usuario no existente"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = UsuarioPasswordSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
+            
 class IslaViewSet(viewsets.ModelViewSet):
     queryset = Isla.objects.all()
     serializer_class = IslaSerializer
@@ -75,8 +82,8 @@ class NegocioViewSet(viewsets.ModelViewSet):
     queryset = Negocio.objects.all()
     serializer_class = NegocioSerializer
 
-    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>\w+)', url_name='buscar_negocio_isla')
-    def buscar_negocio_isla(self, request,nombre_isla):
+    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>[\w\s]+)', url_name='buscar_negocios_isla')
+    def buscar_negocios_isla(self, request,nombre_isla):
             data = Negocio.objects.filter(Q(isla__nombre=nombre_isla))
             if not data.exists():
                 return Response({"error": "Negocios no encontrados"}, status=status.HTTP_404_NOT_FOUND)
@@ -84,8 +91,8 @@ class NegocioViewSet(viewsets.ModelViewSet):
                 data = NegocioSerializer(data, many=True).data
                 return Response(data, status=status.HTTP_200_OK)
     
-    @action(detail=False, methods=['get'], url_path=r'nombre_tipo/(?P<nombre_tipo>\w+)', url_name='buscar_negocio_tipo')
-    def buscar_negocio_tipo(self, request,nombre_tipo):
+    @action(detail=False, methods=['get'], url_path=r'nombre_tipo/(?P<nombre_tipo>\w+)', url_name='buscar_negocios_tipo')
+    def buscar_negocios_tipo(self, request,nombre_tipo):
             data = Negocio.objects.filter(Q(tipo_negocio__tipo=nombre_tipo))
             if not data.exists():
                 return Response({"error": "Negocios no encontrados"}, status=status.HTTP_404_NOT_FOUND)
@@ -93,6 +100,15 @@ class NegocioViewSet(viewsets.ModelViewSet):
                 data = NegocioSerializer(data, many=True).data
                 return Response(data, status=status.HTTP_200_OK)
 
+    @action(detail=False, methods=['get'], url_path=r'id_negocio/(?P<id_negocio>\d+)', url_name='buscar_negocio_id')
+    def buscar_negocios_tipo(self, request,id_negocio):
+            data = Negocio.objects.filter(Q(id=id_negocio))
+            if not data.exists():
+                return Response({"error": "Negocio no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = NegocioSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
+            
 class ResenaViewSet(viewsets.ModelViewSet):
     queryset = Resena.objects.all()
     serializer_class = ResenaSerializer
@@ -121,6 +137,15 @@ class ResenaViewSet(viewsets.ModelViewSet):
                 )           
         serializado = ResenaSerializer(resena).data
         return Response(serializado, status=status.HTTP_201_CREATED)
+    
+    @action(detail=False, methods=['get'], url_path=r'id_negocio/(?P<id_negocio>\d+)', url_name='buscar_resenas')
+    def buscar_resenas(self, request,id_negocio):
+            data = Resena.objects.filter(Q(negocio__id=id_negocio))
+            if not data.exists():
+                return Response({"error": "Sin reseñas"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = ResenaSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
 
 class BiodiversidadViewSet(viewsets.ModelViewSet):
     queryset = Biodiversidad.objects.all()
@@ -130,9 +155,27 @@ class FaunaViewSet(viewsets.ModelViewSet):
     queryset = Fauna.objects.all()
     serializer_class = FaunaSerializer
 
+    @action(detail=False, methods=['get'], url_name='buscar_fauna')
+    def buscar_fauna(self, request):
+            data = Fauna.objects.all()
+            if not data.exists():
+                return Response({"error": "Sin fauna registrada"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = FaunaSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
+
 class FloraViewSet(viewsets.ModelViewSet):
     queryset = Flora.objects.all()
     serializer_class = FloraSerializer
+
+    @action(detail=False, methods=['get'], url_name='buscar_flora')
+    def buscar_flora(self, request):
+            data = Flora.objects.all()
+            if not data.exists():
+                return Response({"error": "Sin flora registrada"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = FloraSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
 
 class ActividadViewSet(viewsets.ModelViewSet):
     queryset = Actividad.objects.all()

@@ -92,6 +92,104 @@
             "tipo" : "Tienda de Recuerdos"
         }
     },
+    {
+        "model": "app.Resena",
+        "pk": 1,
+        "fields": {
+            "descripcion" : "Esto es una resena",
+            "fecha" : "2024-01-01",
+            "hora" : "9:00",
+            "negocio" : 1,
+            "usuario" : 1
+        }
+    },
+    {
+        "model": "app.Resena",
+        "pk": 2,
+        "fields": {
+            "descripcion" : "Esto es una resena 2",
+            "fecha" : "2024-02-02",
+            "hora" : "10:00",
+            "negocio" : 1,
+            "usuario" : 1
+        }
+    },
+    {
+        "model": "app.Biodiversidad",
+        "pk": 1,
+        "fields": {
+            "nombre_comun" : "Tortuga de Galapagos",
+            "nombre_cientifico" : "xxxxxxxxx",
+            "dato" : "Pueden vivir mucho",
+            "imagen" : "link_imagen"
+        }
+    },
+    {
+        "model": "app.Biodiversidad",
+        "pk": 2,
+        "fields": {
+            "nombre_comun" : "Iguana de Galapagos",
+            "nombre_cientifico" : "xxxxxxx",
+            "dato" : "Se adaptan bien",
+            "imagen" : "link_imagen"
+        }
+    },
+    {
+        "model": "app.Biodiversidad",
+        "pk": 3,
+        "fields": {
+            "nombre_comun" : "Cactus de Galapagos",
+            "nombre_cientifico" : "xxxxxxx",
+            "dato" : "Resiste sequia",
+            "imagen" : "link_imagen"
+        }
+    },
+    {
+        "model": "app.Biodiversidad",
+        "pk": 4,
+        "fields": {
+            "nombre_comun" : "Margarita de Galapagos",
+            "nombre_cientifico" : "xxxxxxx",
+            "dato" : "Evolucion",
+            "imagen" : "link_imagen"
+        }
+    },
+    {
+        "model": "app.Fauna",
+        "pk": 1,
+        "fields": {
+            "biodiversidad_ptr_id" : 1,
+            "habitat" : "Bosques secos'",
+            "alimentacion" : "Hierbas"
+        }
+    },
+    {
+        "model": "app.Fauna",
+        "pk": 2,
+        "fields": {
+            "biodiversidad_ptr_id" : 2,
+            "habitat" : "Areas rocosas'",
+            "alimentacion" : "Hierbas"
+        }
+    },
+    {
+        "model": "app.Flora",
+        "pk": 1,
+        "fields": {
+            "biodiversidad_ptr_id" : 3,
+            "distribucion" : "Islas volcanicas'",
+            "usos" : "Alimento"
+        }
+    },
+    {
+        "model": "app.Flora",
+        "pk": 2,
+        "fields": {
+            "biodiversidad_ptr_id" : 4,
+            "distribucion" : "Zonas altas'",
+            "usos" : "Estabiliza el suelo"
+        }
+    },
     {   "model": "app.Ecosistema",
         "pk": 1,
         "fields":

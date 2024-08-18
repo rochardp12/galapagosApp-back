@@ -44,6 +44,63 @@
         }
     },
     {
+        "model": "app.Comentario",
+        "pk": 1,
+        "fields": {
+            "comentario" : "Hay tortugas muy bonitas en la isla San Cristobal",
+            "fecha" : "2024-06-01",
+            "hora" : "21:00",
+            "usuario" : 1
+        }
+    },
+    {
+        "model": "app.Comentario",
+        "pk": 2,
+        "fields": {
+            "comentario" : "Hay iguanas muy bonitas en la isla Isabela",
+            "fecha" : "2024-06-01",
+            "hora" : "14:00",
+            "usuario" : 1
+        }
+    },
+    {
+        "model": "app.Actividad",
+        "pk": 1,
+        "fields": {
+            "nombre" : "Paseo en bote",
+            "direccion" : "Isla Isabela",
+            "hora_inicio" : "9:30",
+            "hora_fin" : "21:00",
+            "edad" : 21,
+            "precio" : 20.85,
+            "isla" : 2
+        }
+    },
+    {
+        "model": "app.Actividad",
+        "pk": 2,
+        "fields": {
+            "nombre" : "Concurso de surf",
+            "direccion" : "Isla San Cristobal",
+            "hora_inicio" : "9:30",
+            "hora_fin" : "15:30",
+            "edad" : 25,
+            "precio" : 5.50,
+            "isla" : 3
+        }
+    },
+    {
+        "model":"app.GuiasTuristicos",
+        "pk": 1,
+        "fields": {
+            "nombre" : "Guia 01",
+            "edad" : 25,
+            "telefono" : "0987654321",
+            "imagen" : "link_imagen",
+            "isla" : 1
+        }
+    },
+    {
         "model": "app.Negocio",
         "pk": 1,
         "fields": {

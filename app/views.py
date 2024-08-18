@@ -99,6 +99,7 @@ class NegocioViewSet(viewsets.ModelViewSet):
             else:
                 data = NegocioSerializer(data, many=True).data
                 return Response(data, status=status.HTTP_200_OK)
+            
 
     @action(detail=False, methods=['get'], url_path=r'id_negocio/(?P<id_negocio>\d+)', url_name='buscar_negocio_id')
     def buscar_negocios_tipo(self, request,id_negocio):
@@ -181,9 +182,27 @@ class ActividadViewSet(viewsets.ModelViewSet):
     queryset = Actividad.objects.all()
     serializer_class = ActividadSerializer
 
+    @action(detail=False, methods=['get'], url_path=r'nombre_actividad_isla/(?P<nombre_actividad_isla>[\w\s]+)', url_name='buscar_actividad_isla')
+    def buscar_actividad_isla(self, request,nombre_actividad_isla):
+            data = Actividad.objects.filter(Q(isla__nombre=nombre_actividad_isla))
+            if not data.exists():
+                return Response({"error": "Actividades no encontradas"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = ActividadSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
+
 class GuiasTuristicosViewSet(viewsets.ModelViewSet):
     queryset = GuiasTuristicos.objects.all()
     serializer_class = GuiasTuristicosSerializer
+
+    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>[\w\s]+)', url_name='buscar_Guia_isla')
+    def buscar_Guia_isla(self, request,nombre_isla):
+            data = GuiasTuristicos.objects.filter(Q(isla__nombre=nombre_isla))
+            if not data.exists():
+                return Response({"error": "Guías Turísticos no encontrados"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = GuiasTuristicosSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
 
 class EcosistemaViewSet(viewsets.ModelViewSet):
     queryset = Ecosistema.objects.all()
@@ -201,6 +220,33 @@ class EcosistemaViewSet(viewsets.ModelViewSet):
 class ComentarioViewSet(viewsets.ModelViewSet):
     queryset = Comentario.objects.all()
     serializer_class = ComentarioSerializer
+
+    @action(detail=False, methods=['get'], url_name='obtener_comentarios')
+    def obtener_comentarios(self, request):
+            data = Comentario.objects.all()
+            if not data.exists():
+                return Response({"error": "Comentarios no encontrados"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = ComentarioSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
+            
+    @action(detail=False, methods=['post'], url_path=r'crear_comentario/')
+    def crear_comentario(self, request):        
+        id_usuario = request.data['usuario']
+        texto =request.data['comentario']
+        
+        usuario = Usuario.objects.filter(Q(id=id_usuario))
+        if not usuario.exists():
+            return Response({"error": "Usuario no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+        
+        usuario = usuario.first()
+
+        comentario = Comentario.objects.create(
+                    usuario = usuario,
+                    comentario=texto,
+                )           
+        serializado = ComentarioSerializer(comentario).data
+        return Response(serializado, status=status.HTTP_201_CREATED)
 
 class CalificacionViewSet(viewsets.ModelViewSet):
     queryset = Calificacion.objects.all()

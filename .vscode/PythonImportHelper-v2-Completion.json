@@ -1,5 +1,38 @@
 [
     {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -21,14 +54,6 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -136,6 +161,14 @@
         "documentation": {}
     },
     {
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -234,6 +267,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "app.migrations.0001_initial",
+        "description": "app.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Biodiversidad',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('nombre_comun', models.CharField(max_length=30)),",
+        "detail": "app.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
         "label": "AppConfig",
         "kind": 6,
         "importPath": "app.apps",
@@ -243,11 +285,20 @@
         "documentation": {}
     },
     {
+        "label": "Usuario",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Usuario(models.Model):\n    nickname = models.CharField(max_length=20)\n    password = models.CharField(max_length=20)\n    class Meta:\n        db_table = 'usuario'\nclass Isla(models.Model):\n    nombre = models.CharField(max_length=30)\n    calificacion_tres = models.IntegerField()\n    calificacion_dos = models.IntegerField()\n    calificacion_uno = models.IntegerField()",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
         "label": "Isla",
         "kind": 6,
         "importPath": "app.models",
         "description": "app.models",
-        "peekOfCode": "class Isla(models.Model):\n    nombre = models.CharField(max_length=30)\n    calificacion_tres = models.IntegerField()\n    calificacion_dos = models.IntegerField()\n    calificacion_uno = models.IntegerField()\n    class Meta:\n        db_table = 'isla'\nclass TipoNegocio(models.Model):\n    tipo = models.CharField(max_length=30)\n    class Meta:",
+        "peekOfCode": "class Isla(models.Model):\n    nombre = models.CharField(max_length=30)\n    calificacion_tres = models.IntegerField()\n    calificacion_dos = models.IntegerField()\n    calificacion_uno = models.IntegerField()\n    descripcion = models.CharField(max_length=300)\n    imagen = models.CharField(max_length=500)\n    class Meta:\n        db_table = 'isla'\nclass TipoNegocio(models.Model):",
         "detail": "app.models",
         "documentation": {}
     },
@@ -256,7 +307,7 @@
         "kind": 6,
         "importPath": "app.models",
         "description": "app.models",
-        "peekOfCode": "class TipoNegocio(models.Model):\n    tipo = models.CharField(max_length=30)\n    class Meta:\n        db_table = 'tipo_negocio'\nclass Negocio(models.Model):\n    nombre = models.CharField(max_length=30)\n    servicios = models.CharField(max_length=100)\n    hora_inicio = models.TimeField()\n    hora_fin = models.TimeField()\n    direccion = models.CharField(max_length=50)",
+        "peekOfCode": "class TipoNegocio(models.Model):\n    tipo = models.CharField(max_length=30)\n    class Meta:\n        db_table = 'tipo_negocio'\nclass Negocio(models.Model):\n    nombre = models.CharField(max_length=30)\n    servicios = models.CharField(max_length=200)\n    hora_inicio = models.TimeField()\n    hora_fin = models.TimeField()\n    direccion = models.CharField(max_length=100)",
         "detail": "app.models",
         "documentation": {}
     },
@@ -265,7 +316,7 @@
         "kind": 6,
         "importPath": "app.models",
         "description": "app.models",
-        "peekOfCode": "class Negocio(models.Model):\n    nombre = models.CharField(max_length=30)\n    servicios = models.CharField(max_length=100)\n    hora_inicio = models.TimeField()\n    hora_fin = models.TimeField()\n    direccion = models.CharField(max_length=50)\n    imagen = models.CharField(max_length=300)\n    tipo_negocio = models.ForeignKey(TipoNegocio, on_delete=models.CASCADE)\n    isla = models.ForeignKey(Isla, on_delete=models.CASCADE)\n    class Meta:",
+        "peekOfCode": "class Negocio(models.Model):\n    nombre = models.CharField(max_length=30)\n    servicios = models.CharField(max_length=200)\n    hora_inicio = models.TimeField()\n    hora_fin = models.TimeField()\n    direccion = models.CharField(max_length=100)\n    imagen = models.CharField(max_length=500)\n    tipo_negocio = models.ForeignKey(TipoNegocio, on_delete=models.CASCADE)\n    isla = models.ForeignKey(Isla, on_delete=models.CASCADE)\n    class Meta:",
         "detail": "app.models",
         "documentation": {}
     },
@@ -274,7 +325,7 @@
         "kind": 6,
         "importPath": "app.models",
         "description": "app.models",
-        "peekOfCode": "class Resena(models.Model):\n    descripcion = models.CharField(max_length=200)\n    fecha = models.DateField()\n    hora = models.TimeField()\n    negocio = models.ForeignKey(Negocio, on_delete=models.CASCADE)\n    class Meta:\n        db_table = 'resena'\nclass Biodiversidad(models.Model):\n    nombre_comun = models.CharField(max_length=30)\n    nombre_cientifico = models.CharField(max_length=50)",
+        "peekOfCode": "class Resena(models.Model):\n    descripcion = models.CharField(max_length=200)\n    fecha = models.DateField(auto_now=True)\n    hora = models.TimeField(auto_now=True)\n    negocio = models.ForeignKey(Negocio, on_delete=models.CASCADE)\n    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)\n    class Meta:\n        db_table = 'resena'\nclass Biodiversidad(models.Model):\n    nombre_comun = models.CharField(max_length=30)",
         "detail": "app.models",
         "documentation": {}
     },
@@ -283,7 +334,7 @@
         "kind": 6,
         "importPath": "app.models",
         "description": "app.models",
-        "peekOfCode": "class Biodiversidad(models.Model):\n    nombre_comun = models.CharField(max_length=30)\n    nombre_cientifico = models.CharField(max_length=50)\n    dato = models.CharField(max_length=200)\n    imagen = models.CharField(max_length=300)\n    class Meta:\n        db_table = 'biodiversidad'\nclass Fauna(Biodiversidad):\n    habitat = models.CharField(max_length=50)\n    alimentacion = models.CharField(max_length=50)",
+        "peekOfCode": "class Biodiversidad(models.Model):\n    nombre_comun = models.CharField(max_length=30)\n    nombre_cientifico = models.CharField(max_length=50)\n    dato = models.CharField(max_length=200)\n    imagen = models.CharField(max_length=500)\n    class Meta:\n        db_table = 'biodiversidad'\nclass Fauna(Biodiversidad):\n    habitat = models.CharField(max_length=50)\n    alimentacion = models.CharField(max_length=50)",
         "detail": "app.models",
         "documentation": {}
     },
@@ -301,8 +352,62 @@
         "kind": 6,
         "importPath": "app.models",
         "description": "app.models",
-        "peekOfCode": "class Flora(Biodiversidad):\n    distribucion = models.CharField(max_length=50)\n    usos = models.CharField(max_length=100)\n    class Meta:\n        db_table = 'flora'",
+        "peekOfCode": "class Flora(Biodiversidad):\n    distribucion = models.CharField(max_length=50)\n    usos = models.CharField(max_length=100)\n    class Meta:\n        db_table = 'flora'\nclass Actividad(models.Model):\n    nombre = models.CharField(max_length=20)\n    direccion = models.CharField(max_length=100)\n    hora_inicio = models.TimeField()\n    hora_fin = models.TimeField()",
         "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Actividad",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Actividad(models.Model):\n    nombre = models.CharField(max_length=20)\n    direccion = models.CharField(max_length=100)\n    hora_inicio = models.TimeField()\n    hora_fin = models.TimeField()\n    edad = models.IntegerField()\n    precio = models.DecimalField(max_digits=10, decimal_places=2)\n    isla = models.ForeignKey(Isla, on_delete=models.CASCADE)\n    class Meta:\n        db_table = 'actividad'",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "GuiasTuristicos",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class GuiasTuristicos(models.Model):\n    nombre = models.CharField(max_length=20)\n    edad = models.IntegerField()\n    telefono = models.CharField(max_length=10)\n    imagen = models.CharField(max_length=500)\n    isla = models.ForeignKey(Isla, on_delete=models.CASCADE)\n    class Meta:\n        db_table = 'guias_turisticos'\nclass Ecosistema(models.Model):\n    nombre = models.CharField(max_length=20)",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Ecosistema",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Ecosistema(models.Model):\n    nombre = models.CharField(max_length=20)\n    descripcion = models.CharField(max_length=200)\n    imagen = models.CharField(max_length=500)\n    class Meta:\n        db_table = 'ecosistema'\nclass Comentario(models.Model):\n    comentario = models.CharField(max_length=200)\n    fecha = models.DateField(auto_now=True)\n    hora = models.TimeField(auto_now=True)",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Comentario",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Comentario(models.Model):\n    comentario = models.CharField(max_length=200)\n    fecha = models.DateField(auto_now=True)\n    hora = models.TimeField(auto_now=True)\n    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)\n    class Meta:\n        db_table = 'comentario'\nclass Calificacion(models.Model):\n    voto = models.BooleanField(default = False)\n    puntuacion = models.IntegerField()",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Calificacion",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Calificacion(models.Model):\n    voto = models.BooleanField(default = False)\n    puntuacion = models.IntegerField()\n    isla = models.ForeignKey(Isla, on_delete=models.CASCADE)\n    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)\n    class Meta:\n        db_table = 'calificacion'",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "UsuarioSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class UsuarioSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Usuario\n        fields = ['id', 'nickname']\nclass IslaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Isla\n        fields = \"__all__\"\nclass TipoNegocioSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "detail": "app.serializer",
         "documentation": {}
     },
     {
@@ -328,7 +433,7 @@
         "kind": 6,
         "importPath": "app.serializer",
         "description": "app.serializer",
-        "peekOfCode": "class NegocioSerializer(serializers.ModelSerializer):\n    tipo_negocio = TipoNegocioSerializer(many=False, read_only=True)\n    isla = IslaSerializer(many=False, read_only=True)\n    class Meta:\n        model = Negocio\n        fields = \"__all__\"\nclass ResenaSerializer(serializers.ModelSerializer):\n    negocio = NegocioSerializer(many=False, read_only=True)\n    class Meta:\n        model = Resena",
+        "peekOfCode": "class NegocioSerializer(serializers.ModelSerializer):\n    tipo_negocio = TipoNegocioSerializer(many=False, read_only=True)\n    isla = IslaSerializer(many=False, read_only=True)\n    class Meta:\n        model = Negocio\n        fields = \"__all__\"\nclass ResenaSerializer(serializers.ModelSerializer):\n    negocio = NegocioSerializer(many=False, read_only=True)\n    usuario = UsuarioSerializer(many=False, read_only=True)\n    class Meta:",
         "detail": "app.serializer",
         "documentation": {}
     },
@@ -337,8 +442,107 @@
         "kind": 6,
         "importPath": "app.serializer",
         "description": "app.serializer",
-        "peekOfCode": "class ResenaSerializer(serializers.ModelSerializer):\n    negocio = NegocioSerializer(many=False, read_only=True)\n    class Meta:\n        model = Resena\n        fields = \"__all__\"",
+        "peekOfCode": "class ResenaSerializer(serializers.ModelSerializer):\n    negocio = NegocioSerializer(many=False, read_only=True)\n    usuario = UsuarioSerializer(many=False, read_only=True)\n    class Meta:\n        model = Resena\n        fields = \"__all__\"\nclass BiodiversidadSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Biodiversidad\n        fields = \"__all__\"",
         "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "BiodiversidadSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class BiodiversidadSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Biodiversidad\n        fields = \"__all__\"\nclass FaunaSerializer(BiodiversidadSerializer):\n    class Meta:\n        model = Fauna\n        fields = \"__all__\"\nclass FloraSerializer(BiodiversidadSerializer):\n    class Meta:",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "FaunaSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class FaunaSerializer(BiodiversidadSerializer):\n    class Meta:\n        model = Fauna\n        fields = \"__all__\"\nclass FloraSerializer(BiodiversidadSerializer):\n    class Meta:\n        model = Flora\n        fields = \"__all__\"\nclass ActividadSerializer(serializers.ModelSerializer):\n    isla = IslaSerializer(many=False, read_only=True)",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "FloraSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class FloraSerializer(BiodiversidadSerializer):\n    class Meta:\n        model = Flora\n        fields = \"__all__\"\nclass ActividadSerializer(serializers.ModelSerializer):\n    isla = IslaSerializer(many=False, read_only=True)\n    class Meta:\n        model = Actividad\n        fields = \"__all__\"\nclass GuiasTuristicosSerializer(serializers.ModelSerializer):",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "ActividadSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class ActividadSerializer(serializers.ModelSerializer):\n    isla = IslaSerializer(many=False, read_only=True)\n    class Meta:\n        model = Actividad\n        fields = \"__all__\"\nclass GuiasTuristicosSerializer(serializers.ModelSerializer):\n    isla = IslaSerializer(many=False, read_only=True)\n    class Meta:\n        model = GuiasTuristicos\n        fields = \"__all__\"",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "GuiasTuristicosSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class GuiasTuristicosSerializer(serializers.ModelSerializer):\n    isla = IslaSerializer(many=False, read_only=True)\n    class Meta:\n        model = GuiasTuristicos\n        fields = \"__all__\"\nclass EcosistemaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Ecosistema\n        fields = \"__all__\"\nclass ComentarioSerializer(serializers.ModelSerializer):",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "EcosistemaSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class EcosistemaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Ecosistema\n        fields = \"__all__\"\nclass ComentarioSerializer(serializers.ModelSerializer):\n    usuario = UsuarioSerializer(many=False, read_only=True)\n    class Meta:\n        model = Comentario\n        fields = \"__all__\"\nclass CalificacionSerializer(serializers.ModelSerializer):",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "ComentarioSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class ComentarioSerializer(serializers.ModelSerializer):\n    usuario = UsuarioSerializer(many=False, read_only=True)\n    class Meta:\n        model = Comentario\n        fields = \"__all__\"\nclass CalificacionSerializer(serializers.ModelSerializer):\n    isla = IslaSerializer(many=False, read_only=True)\n    usuario = UsuarioSerializer(many=False, read_only=True)\n    class Meta:\n        model = Calificacion",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "CalificacionSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class CalificacionSerializer(serializers.ModelSerializer):\n    isla = IslaSerializer(many=False, read_only=True)\n    usuario = UsuarioSerializer(many=False, read_only=True)\n    class Meta:\n        model = Calificacion\n        fields = \"__all__\"",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "UsuarioViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class UsuarioViewSet(viewsets.ModelViewSet):\n    queryset = Usuario.objects.all()\n    serializer_class = UsuarioSerializer\nclass IslaViewSet(viewsets.ModelViewSet):\n    queryset = Isla.objects.all()\n    serializer_class = IslaSerializer\n    #katherine tumbaco\n    @action(detail=False, methods=['get'], url_path=r'registradas', url_name='obtener_islas')\n    def obtener_isla(self, request):\n            data = Isla.objects.all()",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "IslaViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class IslaViewSet(viewsets.ModelViewSet):\n    queryset = Isla.objects.all()\n    serializer_class = IslaSerializer\n    #katherine tumbaco\n    @action(detail=False, methods=['get'], url_path=r'registradas', url_name='obtener_islas')\n    def obtener_isla(self, request):\n            data = Isla.objects.all()\n            if not data.exists():\n                return Response({\"error\": \"Islas no encontradas\"}, status=status.HTTP_404_NOT_FOUND)\n            else:",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "TipoNegocioViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class TipoNegocioViewSet(viewsets.ModelViewSet):\n    queryset = TipoNegocio.objects.all()\n    serializer_class = TipoNegocioSerializer\nclass NegocioViewSet(viewsets.ModelViewSet):\n    queryset = Negocio.objects.all()\n    serializer_class = NegocioSerializer\n    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>\\w+)', url_name='buscar_negocio_isla')\n    def buscar_negocio_isla(self, request,nombre_isla):\n            data = Negocio.objects.filter(Q(isla__nombre=nombre_isla))\n            if not data.exists():",
+        "detail": "app.views",
         "documentation": {}
     },
     {
@@ -346,7 +550,88 @@
         "kind": 6,
         "importPath": "app.views",
         "description": "app.views",
-        "peekOfCode": "class NegocioViewSet(viewsets.ModelViewSet):\n    queryset = Negocio.objects.all()\n    serializer_class = NegocioSerializer\n    @action(detail=False, methods=['get'], url_name='search_role_user')\n    def search_role_user(self, request):\n        data = Negocio.objects.all()\n        data = NegocioSerializer(data, many=True).data\n        return Response(data, status=201)\n        '''data = {\n                \"id\": 2,",
+        "peekOfCode": "class NegocioViewSet(viewsets.ModelViewSet):\n    queryset = Negocio.objects.all()\n    serializer_class = NegocioSerializer\n    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>\\w+)', url_name='buscar_negocio_isla')\n    def buscar_negocio_isla(self, request,nombre_isla):\n            data = Negocio.objects.filter(Q(isla__nombre=nombre_isla))\n            if not data.exists():\n                return Response({\"error\": \"Negocios no encontrados\"}, status=status.HTTP_404_NOT_FOUND)\n            else:\n                data = NegocioSerializer(data, many=True).data",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "ResenaViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class ResenaViewSet(viewsets.ModelViewSet):\n    queryset = Resena.objects.all()\n    serializer_class = ResenaSerializer\n    @action(detail=False, methods=['post'], url_path=r'crear_resena/')\n    def crear_resena(self, request):        \n        id_negocio=request.data['negocio']\n        id_usuario = request.data['usuario']\n        texto=request.data['descripcion']\n        negocio = Negocio.objects.filter(Q(id=id_negocio))\n        if not negocio.exists():",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "BiodiversidadViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class BiodiversidadViewSet(viewsets.ModelViewSet):\n    queryset = Biodiversidad.objects.all()\n    serializer_class = BiodiversidadSerializer\nclass FaunaViewSet(viewsets.ModelViewSet):\n    queryset = Fauna.objects.all()\n    serializer_class = FaunaSerializer\nclass FloraViewSet(viewsets.ModelViewSet):\n    queryset = Flora.objects.all()\n    serializer_class = FloraSerializer\nclass ActividadViewSet(viewsets.ModelViewSet):",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "FaunaViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class FaunaViewSet(viewsets.ModelViewSet):\n    queryset = Fauna.objects.all()\n    serializer_class = FaunaSerializer\nclass FloraViewSet(viewsets.ModelViewSet):\n    queryset = Flora.objects.all()\n    serializer_class = FloraSerializer\nclass ActividadViewSet(viewsets.ModelViewSet):\n    queryset = Actividad.objects.all()\n    serializer_class = ActividadSerializer\nclass GuiasTuristicosViewSet(viewsets.ModelViewSet):",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "FloraViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class FloraViewSet(viewsets.ModelViewSet):\n    queryset = Flora.objects.all()\n    serializer_class = FloraSerializer\nclass ActividadViewSet(viewsets.ModelViewSet):\n    queryset = Actividad.objects.all()\n    serializer_class = ActividadSerializer\nclass GuiasTuristicosViewSet(viewsets.ModelViewSet):\n    queryset = GuiasTuristicos.objects.all()\n    serializer_class = GuiasTuristicosSerializer\nclass EcosistemaViewSet(viewsets.ModelViewSet):",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "ActividadViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class ActividadViewSet(viewsets.ModelViewSet):\n    queryset = Actividad.objects.all()\n    serializer_class = ActividadSerializer\nclass GuiasTuristicosViewSet(viewsets.ModelViewSet):\n    queryset = GuiasTuristicos.objects.all()\n    serializer_class = GuiasTuristicosSerializer\nclass EcosistemaViewSet(viewsets.ModelViewSet):\n    queryset = Ecosistema.objects.all()\n    serializer_class = EcosistemaSerializer\n    #katherine tumbaco",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "GuiasTuristicosViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class GuiasTuristicosViewSet(viewsets.ModelViewSet):\n    queryset = GuiasTuristicos.objects.all()\n    serializer_class = GuiasTuristicosSerializer\nclass EcosistemaViewSet(viewsets.ModelViewSet):\n    queryset = Ecosistema.objects.all()\n    serializer_class = EcosistemaSerializer\n    #katherine tumbaco\n    @action(detail=False, methods=['get'], url_path=r'registrados', url_name='obtener_ecosistemas')\n    def obtener_ecosistemas(self, request,):\n            data = Ecosistema.objects.all()",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "EcosistemaViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class EcosistemaViewSet(viewsets.ModelViewSet):\n    queryset = Ecosistema.objects.all()\n    serializer_class = EcosistemaSerializer\n    #katherine tumbaco\n    @action(detail=False, methods=['get'], url_path=r'registrados', url_name='obtener_ecosistemas')\n    def obtener_ecosistemas(self, request,):\n            data = Ecosistema.objects.all()\n            if not data.exists():\n                return Response({\"error\": \"Ecosistemas no encontrados\"}, status=status.HTTP_404_NOT_FOUND)\n            else:",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "ComentarioViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class ComentarioViewSet(viewsets.ModelViewSet):\n    queryset = Comentario.objects.all()\n    serializer_class = ComentarioSerializer\nclass CalificacionViewSet(viewsets.ModelViewSet):\n    queryset = Calificacion.objects.all()\n    serializer_class = CalificacionSerializer\n    #katherine tumbaco\n    @action(detail=False, methods=['get'], url_path=r'usuario/(?P<id_usuario>\\w+)/isla/(?P<id_isla>\\w+)', url_name='obtener_celificacion_usuario')\n    def obtener_calificacion_usuario(self, request,id_usuario,id_isla):\n            data = Calificacion.objects.filter(usuario_id=id_usuario, isla_id=id_isla)",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "CalificacionViewSet",
+        "kind": 6,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "class CalificacionViewSet(viewsets.ModelViewSet):\n    queryset = Calificacion.objects.all()\n    serializer_class = CalificacionSerializer\n    #katherine tumbaco\n    @action(detail=False, methods=['get'], url_path=r'usuario/(?P<id_usuario>\\w+)/isla/(?P<id_isla>\\w+)', url_name='obtener_celificacion_usuario')\n    def obtener_calificacion_usuario(self, request,id_usuario,id_isla):\n            data = Calificacion.objects.filter(usuario_id=id_usuario, isla_id=id_isla)\n            if not data.exists():\n                return Response({\"error\": \"Calificacion no encontrada\"}, status=status.HTTP_404_NOT_FOUND)\n            else:",
         "detail": "app.views",
         "documentation": {}
     },
@@ -517,7 +802,7 @@
         "kind": 5,
         "importPath": "galapagosApp.urls",
         "description": "galapagosApp.urls",
-        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'negocio', views.NegocioViewSet)\nschema_view = get_schema_view(\n   openapi.Info(\n      title=\"Galapagos API\",\n      default_version='v1',\n   ),\n   public=True,\n   permission_classes=(permissions.AllowAny,),\n)",
+        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'usuario', views.UsuarioViewSet)\nrouter.register(r'isla', views.IslaViewSet)\nrouter.register(r'tipo_negocio', views.TipoNegocioViewSet)\nrouter.register(r'negocio', views.NegocioViewSet)\nrouter.register(r'resena', views.ResenaViewSet)\nrouter.register(r'biodiversidad', views.BiodiversidadViewSet)\nrouter.register(r'fauna', views.FaunaViewSet)\nrouter.register(r'flora', views.FloraViewSet)\nrouter.register(r'actividad', views.ActividadViewSet)",
         "detail": "galapagosApp.urls",
         "documentation": {}
     },

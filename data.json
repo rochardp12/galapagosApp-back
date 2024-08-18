@@ -189,5 +189,52 @@
             "distribucion" : "Zonas altas'",
             "usos" : "Estabiliza el suelo"
         }
+    },
+    {   "model": "app.Ecosistema",
+        "pk": 1,
+        "fields":
+            {
+                "nombre": "Los manglares",
+                "descripcion": "Las islas Galápagos son las únicas islas volcánicas en el Pacífico Este en donde los manglares se encuentran de manera natural.",
+                "imagen": "https://www.darwinfoundation.org/media/images/Mangroves_are_considered_an_oasis_for_life.max-1000x1000.jpg"
+            }
+    },
+    {   "model": "app.Ecosistema",
+        "pk": 2,
+        "fields":
+            {
+                "nombre": "Rayas doradas",
+                "descripcion": "Es conocido que los manglares proporcionan un hábitat crítico a los peces a lo largo de su ciclo vital",
+                "imagen": "https://www.darwinfoundation/"
+            }
+    },
+    {   "model": "app.Ecosistema",
+    "pk": 3,
+    "fields":
+        {
+            "nombre": "Evaluacion",
+            "descripcion": "Gracias a este estudio podemos concluir que los manglares en el archipiélago",
+            "imagen": "https://www.darwinfoundation.org/"
+        }
+    },
+    {   "model": "app.Ecosistema",
+    "pk": 4,
+    "fields":
+        {
+            "nombre": "Juveniles de peces",
+            "descripcion": "A pesar de la importancia ecológica y socioeconómica de los manglares en el archipiélago",
+            "imagen": "https://www.darwinfoundation.org/media/images/Juvenile_fish_among_mangrove_roots.max-1000x1000.jpg"
+        }
+    },
+    {
+        "model": "app.Calificacion",
+        "pk": 1,
+        "fields": {
+                "isla": 1,
+                "usuario": 1,
+                "voto": true,
+                "puntuacion": 2
+        }
     }
+    
 ]

@@ -406,7 +406,16 @@
         "kind": 6,
         "importPath": "app.serializer",
         "description": "app.serializer",
-        "peekOfCode": "class UsuarioSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Usuario\n        fields = ['id', 'nickname']\nclass IslaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Isla\n        fields = \"__all__\"\nclass TipoNegocioSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "peekOfCode": "class UsuarioSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Usuario\n        fields = ['id', 'nickname']\nclass UsuarioPasswordSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Usuario\n        fields = \"__all__\"\nclass IslaSerializer(serializers.ModelSerializer):\n    class Meta:",
+        "detail": "app.serializer",
+        "documentation": {}
+    },
+    {
+        "label": "UsuarioPasswordSerializer",
+        "kind": 6,
+        "importPath": "app.serializer",
+        "description": "app.serializer",
+        "peekOfCode": "class UsuarioPasswordSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Usuario\n        fields = \"__all__\"\nclass IslaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Isla\n        fields = \"__all__\"\nclass TipoNegocioSerializer(serializers.ModelSerializer):\n    class Meta:",
         "detail": "app.serializer",
         "documentation": {}
     },
@@ -523,7 +532,7 @@
         "kind": 6,
         "importPath": "app.views",
         "description": "app.views",
-        "peekOfCode": "class UsuarioViewSet(viewsets.ModelViewSet):\n    queryset = Usuario.objects.all()\n    serializer_class = UsuarioSerializer\nclass IslaViewSet(viewsets.ModelViewSet):\n    queryset = Isla.objects.all()\n    serializer_class = IslaSerializer\n    #katherine tumbaco\n    @action(detail=False, methods=['get'], url_path=r'registradas', url_name='obtener_islas')\n    def obtener_isla(self, request):\n            data = Isla.objects.all()",
+        "peekOfCode": "class UsuarioViewSet(viewsets.ModelViewSet):\n    queryset = Usuario.objects.all()\n    serializer_class = UsuarioSerializer\n    @action(detail=False, methods=['post'], url_path=r'crear_usuario/')\n    def crear_usuario(self, request):        \n        nickname = request.data['nickname']\n        password = request.data['password']\n        creado = Usuario.objects.filter(Q(nickname = nickname))\n        if creado.exists():\n            return Response({\"error\": \"Nickname ya registrado\"}, status=status.HTTP_409_CONFLICT)",
         "detail": "app.views",
         "documentation": {}
     },
@@ -541,7 +550,7 @@
         "kind": 6,
         "importPath": "app.views",
         "description": "app.views",
-        "peekOfCode": "class TipoNegocioViewSet(viewsets.ModelViewSet):\n    queryset = TipoNegocio.objects.all()\n    serializer_class = TipoNegocioSerializer\nclass NegocioViewSet(viewsets.ModelViewSet):\n    queryset = Negocio.objects.all()\n    serializer_class = NegocioSerializer\n    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>\\w+)', url_name='buscar_negocio_isla')\n    def buscar_negocio_isla(self, request,nombre_isla):\n            data = Negocio.objects.filter(Q(isla__nombre=nombre_isla))\n            if not data.exists():",
+        "peekOfCode": "class TipoNegocioViewSet(viewsets.ModelViewSet):\n    queryset = TipoNegocio.objects.all()\n    serializer_class = TipoNegocioSerializer\nclass NegocioViewSet(viewsets.ModelViewSet):\n    queryset = Negocio.objects.all()\n    serializer_class = NegocioSerializer\n    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>[\\w\\s]+)', url_name='buscar_negocios_isla')\n    def buscar_negocios_isla(self, request,nombre_isla):\n            data = Negocio.objects.filter(Q(isla__nombre=nombre_isla))\n            if not data.exists():",
         "detail": "app.views",
         "documentation": {}
     },
@@ -550,7 +559,7 @@
         "kind": 6,
         "importPath": "app.views",
         "description": "app.views",
-        "peekOfCode": "class NegocioViewSet(viewsets.ModelViewSet):\n    queryset = Negocio.objects.all()\n    serializer_class = NegocioSerializer\n    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>\\w+)', url_name='buscar_negocio_isla')\n    def buscar_negocio_isla(self, request,nombre_isla):\n            data = Negocio.objects.filter(Q(isla__nombre=nombre_isla))\n            if not data.exists():\n                return Response({\"error\": \"Negocios no encontrados\"}, status=status.HTTP_404_NOT_FOUND)\n            else:\n                data = NegocioSerializer(data, many=True).data",
+        "peekOfCode": "class NegocioViewSet(viewsets.ModelViewSet):\n    queryset = Negocio.objects.all()\n    serializer_class = NegocioSerializer\n    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>[\\w\\s]+)', url_name='buscar_negocios_isla')\n    def buscar_negocios_isla(self, request,nombre_isla):\n            data = Negocio.objects.filter(Q(isla__nombre=nombre_isla))\n            if not data.exists():\n                return Response({\"error\": \"Negocios no encontrados\"}, status=status.HTTP_404_NOT_FOUND)\n            else:\n                data = NegocioSerializer(data, many=True).data",
         "detail": "app.views",
         "documentation": {}
     },
@@ -568,7 +577,7 @@
         "kind": 6,
         "importPath": "app.views",
         "description": "app.views",
-        "peekOfCode": "class BiodiversidadViewSet(viewsets.ModelViewSet):\n    queryset = Biodiversidad.objects.all()\n    serializer_class = BiodiversidadSerializer\nclass FaunaViewSet(viewsets.ModelViewSet):\n    queryset = Fauna.objects.all()\n    serializer_class = FaunaSerializer\nclass FloraViewSet(viewsets.ModelViewSet):\n    queryset = Flora.objects.all()\n    serializer_class = FloraSerializer\nclass ActividadViewSet(viewsets.ModelViewSet):",
+        "peekOfCode": "class BiodiversidadViewSet(viewsets.ModelViewSet):\n    queryset = Biodiversidad.objects.all()\n    serializer_class = BiodiversidadSerializer\nclass FaunaViewSet(viewsets.ModelViewSet):\n    queryset = Fauna.objects.all()\n    serializer_class = FaunaSerializer\n    @action(detail=False, methods=['get'], url_name='buscar_fauna')\n    def buscar_fauna(self, request):\n            data = Fauna.objects.all()\n            if not data.exists():",
         "detail": "app.views",
         "documentation": {}
     },
@@ -577,7 +586,7 @@
         "kind": 6,
         "importPath": "app.views",
         "description": "app.views",
-        "peekOfCode": "class FaunaViewSet(viewsets.ModelViewSet):\n    queryset = Fauna.objects.all()\n    serializer_class = FaunaSerializer\nclass FloraViewSet(viewsets.ModelViewSet):\n    queryset = Flora.objects.all()\n    serializer_class = FloraSerializer\nclass ActividadViewSet(viewsets.ModelViewSet):\n    queryset = Actividad.objects.all()\n    serializer_class = ActividadSerializer\nclass GuiasTuristicosViewSet(viewsets.ModelViewSet):",
+        "peekOfCode": "class FaunaViewSet(viewsets.ModelViewSet):\n    queryset = Fauna.objects.all()\n    serializer_class = FaunaSerializer\n    @action(detail=False, methods=['get'], url_name='buscar_fauna')\n    def buscar_fauna(self, request):\n            data = Fauna.objects.all()\n            if not data.exists():\n                return Response({\"error\": \"Sin fauna registrada\"}, status=status.HTTP_404_NOT_FOUND)\n            else:\n                data = FaunaSerializer(data, many=True).data",
         "detail": "app.views",
         "documentation": {}
     },
@@ -586,7 +595,7 @@
         "kind": 6,
         "importPath": "app.views",
         "description": "app.views",
-        "peekOfCode": "class FloraViewSet(viewsets.ModelViewSet):\n    queryset = Flora.objects.all()\n    serializer_class = FloraSerializer\nclass ActividadViewSet(viewsets.ModelViewSet):\n    queryset = Actividad.objects.all()\n    serializer_class = ActividadSerializer\nclass GuiasTuristicosViewSet(viewsets.ModelViewSet):\n    queryset = GuiasTuristicos.objects.all()\n    serializer_class = GuiasTuristicosSerializer\nclass EcosistemaViewSet(viewsets.ModelViewSet):",
+        "peekOfCode": "class FloraViewSet(viewsets.ModelViewSet):\n    queryset = Flora.objects.all()\n    serializer_class = FloraSerializer\n    @action(detail=False, methods=['get'], url_name='buscar_flora')\n    def buscar_flora(self, request):\n            data = Flora.objects.all()\n            if not data.exists():\n                return Response({\"error\": \"Sin flora registrada\"}, status=status.HTTP_404_NOT_FOUND)\n            else:\n                data = FloraSerializer(data, many=True).data",
         "detail": "app.views",
         "documentation": {}
     },
@@ -595,7 +604,7 @@
         "kind": 6,
         "importPath": "app.views",
         "description": "app.views",
-        "peekOfCode": "class ActividadViewSet(viewsets.ModelViewSet):\n    queryset = Actividad.objects.all()\n    serializer_class = ActividadSerializer\nclass GuiasTuristicosViewSet(viewsets.ModelViewSet):\n    queryset = GuiasTuristicos.objects.all()\n    serializer_class = GuiasTuristicosSerializer\nclass EcosistemaViewSet(viewsets.ModelViewSet):\n    queryset = Ecosistema.objects.all()\n    serializer_class = EcosistemaSerializer\n    #katherine tumbaco",
+        "peekOfCode": "class ActividadViewSet(viewsets.ModelViewSet):\n    queryset = Actividad.objects.all()\n    serializer_class = ActividadSerializer\n    @action(detail=False, methods=['get'], url_path=r'nombre_actividad_isla/(?P<nombre_actividad_isla>[\\w\\s]+)', url_name='buscar_actividad_isla')\n    def buscar_actividad_isla(self, request,nombre_actividad_isla):\n            data = Actividad.objects.filter(Q(isla__nombre=nombre_actividad_isla))\n            if not data.exists():\n                return Response({\"error\": \"Actividades no encontradas\"}, status=status.HTTP_404_NOT_FOUND)\n            else:\n                data = ActividadSerializer(data, many=True).data",
         "detail": "app.views",
         "documentation": {}
     },
@@ -604,7 +613,7 @@
         "kind": 6,
         "importPath": "app.views",
         "description": "app.views",
-        "peekOfCode": "class GuiasTuristicosViewSet(viewsets.ModelViewSet):\n    queryset = GuiasTuristicos.objects.all()\n    serializer_class = GuiasTuristicosSerializer\nclass EcosistemaViewSet(viewsets.ModelViewSet):\n    queryset = Ecosistema.objects.all()\n    serializer_class = EcosistemaSerializer\n    #katherine tumbaco\n    @action(detail=False, methods=['get'], url_path=r'registrados', url_name='obtener_ecosistemas')\n    def obtener_ecosistemas(self, request,):\n            data = Ecosistema.objects.all()",
+        "peekOfCode": "class GuiasTuristicosViewSet(viewsets.ModelViewSet):\n    queryset = GuiasTuristicos.objects.all()\n    serializer_class = GuiasTuristicosSerializer\n    @action(detail=False, methods=['get'], url_path=r'nombre_isla/(?P<nombre_isla>[\\w\\s]+)', url_name='buscar_Guia_isla')\n    def buscar_Guia_isla(self, request,nombre_isla):\n            data = GuiasTuristicos.objects.filter(Q(isla__nombre=nombre_isla))\n            if not data.exists():\n                return Response({\"error\": \"Guías Turísticos no encontrados\"}, status=status.HTTP_404_NOT_FOUND)\n            else:\n                data = GuiasTuristicosSerializer(data, many=True).data",
         "detail": "app.views",
         "documentation": {}
     },
@@ -622,7 +631,7 @@
         "kind": 6,
         "importPath": "app.views",
         "description": "app.views",
-        "peekOfCode": "class ComentarioViewSet(viewsets.ModelViewSet):\n    queryset = Comentario.objects.all()\n    serializer_class = ComentarioSerializer\nclass CalificacionViewSet(viewsets.ModelViewSet):\n    queryset = Calificacion.objects.all()\n    serializer_class = CalificacionSerializer\n    #katherine tumbaco\n    @action(detail=False, methods=['get'], url_path=r'usuario/(?P<id_usuario>\\w+)/isla/(?P<id_isla>\\w+)', url_name='obtener_celificacion_usuario')\n    def obtener_calificacion_usuario(self, request,id_usuario,id_isla):\n            data = Calificacion.objects.filter(usuario_id=id_usuario, isla_id=id_isla)",
+        "peekOfCode": "class ComentarioViewSet(viewsets.ModelViewSet):\n    queryset = Comentario.objects.all()\n    serializer_class = ComentarioSerializer\n    @action(detail=False, methods=['get'], url_name='obtener_comentarios')\n    def obtener_comentarios(self, request):\n            data = Comentario.objects.all()\n            if not data.exists():\n                return Response({\"error\": \"Comentarios no encontrados\"}, status=status.HTTP_404_NOT_FOUND)\n            else:\n                data = ComentarioSerializer(data, many=True).data",
         "detail": "app.views",
         "documentation": {}
     },

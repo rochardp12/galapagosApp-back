@@ -78,6 +78,15 @@ class TipoNegocioViewSet(viewsets.ModelViewSet):
     queryset = TipoNegocio.objects.all()
     serializer_class = TipoNegocioSerializer
 
+    @action(detail=False, methods=['get'], url_name='tipos_negocio')
+    def tipos_negocio(self, request):
+            data = TipoNegocio.objects.all()
+            if not data.exists():
+                return Response({"error": "Sin tipos registrados"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = TipoNegocioSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
+
 class NegocioViewSet(viewsets.ModelViewSet):
     queryset = Negocio.objects.all()
     serializer_class = NegocioSerializer
@@ -102,10 +111,19 @@ class NegocioViewSet(viewsets.ModelViewSet):
             
 
     @action(detail=False, methods=['get'], url_path=r'id_negocio/(?P<id_negocio>\d+)', url_name='buscar_negocio_id')
-    def buscar_negocios_tipo(self, request,id_negocio):
+    def buscar_negocios_id(self, request,id_negocio):
             data = Negocio.objects.filter(Q(id=id_negocio))
             if not data.exists():
                 return Response({"error": "Negocio no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+            else:
+                data = NegocioSerializer(data, many=True).data
+                return Response(data, status=status.HTTP_200_OK)
+    
+    @action(detail=False, methods=['get'], url_name='buscar_negocios')
+    def buscar_negocios(self, request):
+            data = Negocio.objects.all()
+            if not data.exists():
+                return Response({"error": "Sin negocios registrados"}, status=status.HTTP_404_NOT_FOUND)
             else:
                 data = NegocioSerializer(data, many=True).data
                 return Response(data, status=status.HTTP_200_OK)

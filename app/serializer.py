@@ -29,7 +29,7 @@ class NegocioSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class ResenaSerializer(serializers.ModelSerializer):
-    negocio = NegocioSerializer(many=False, read_only=True)
+    #negocio = NegocioSerializer(many=False, read_only=True)
     usuario = UsuarioSerializer(many=False, read_only=True)
     class Meta:
         model = Resena

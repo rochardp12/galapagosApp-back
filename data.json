@@ -16,7 +16,7 @@
             "calificacion_dos" : 0,
             "calificacion_uno" : 0,
             "descripcion" : "La isla Isabela, una isla muy bonita",
-            "imagen" : "link_imagen"
+            "imagen" : "https://www.galapatours.com/_next/image?url=https%3A%2F%2Fmedia.venturatravel.org%2Funsafe%2F1300x%2Fsmart%2Fgal%2Fdestination%2Fisabela.jpg&w=3840&q=75"
         }
     },
     {
@@ -28,7 +28,7 @@
             "calificacion_dos" : 0,
             "calificacion_uno" : 0,
             "descripcion" : "La isla Santa Cruz, una isla muy bonita",
-            "imagen" : "link_imagen"
+            "imagen" : "https://quitotourbus.com/wp-content/uploads/2022/12/Que-hacer-en-la-Isla-Santa-Cruz-Galapagos.jpg"
         }
     },
     {
@@ -40,7 +40,7 @@
             "calificacion_dos" : 0,
             "calificacion_uno" : 0,
             "descripcion" : "La isla San Cristobal, una isla muy bonita",
-            "imagen" : "link_imagen"
+            "imagen" : "https://happygringo.com/wp-content/uploads/2021/02/witch-hill-san-cristobal.jpg"
         }
     },
     {
@@ -109,7 +109,7 @@
             "hora_inicio" : "9:30",
             "hora_fin" : "21:00",
             "direccion" : "Direccion cerca de aqui",
-            "imagen" : "link_imagen",
+            "imagen" : "https://www.lavanguardia.com/files/image_990_484/files/fp/uploads/2021/12/23/61c456cc62a0b.r_d.2520-1680.jpeg",
             "tipo_negocio" : 1,
             "isla" : 1
         }
@@ -123,7 +123,7 @@
             "hora_inicio" : "9:30",
             "hora_fin" : "21:00",
             "direccion" : "Direccion cerca de alla",
-            "imagen" : "link_imagen",
+            "imagen" : "https://aureoarquitectura.com/wp-content/uploads/2023/09/Diseno-interior-restaurant.webp",
             "tipo_negocio" : 1,
             "isla" : 2
         }
@@ -132,21 +132,21 @@
         "model": "app.TipoNegocio",
         "pk": 1,
         "fields": {
-            "tipo" : "Restaurante"
+            "tipo" : "RESTAURANTE"
         }
     },
     {
         "model": "app.TipoNegocio",
         "pk": 2,
         "fields": {
-            "tipo" : "Hotel"
+            "tipo" : "HOTEL"
         }
     },
     {
         "model": "app.TipoNegocio",
         "pk": 3,
         "fields": {
-            "tipo" : "Tienda de Recuerdos"
+            "tipo" : "TIENDA DE RECUERDOS"
         }
     },
     {
@@ -178,7 +178,7 @@
             "nombre_comun" : "Tortuga de Galapagos",
             "nombre_cientifico" : "xxxxxxxxx",
             "dato" : "Pueden vivir mucho",
-            "imagen" : "link_imagen"
+            "imagen" : "https://content.nationalgeographic.com.es/medio/2024/02/05/tortuga-gigante-galapagos_2a766ad7_240205124113_800x533.jpg"
         }
     },
     {
@@ -188,7 +188,7 @@
             "nombre_comun" : "Iguana de Galapagos",
             "nombre_cientifico" : "xxxxxxx",
             "dato" : "Se adaptan bien",
-            "imagen" : "link_imagen"
+            "imagen" : "https://www.metropolitan-touring.com/wp-content/uploads/2022/09/1_galapagos-marine-iguana.jpg"
         }
     },
     {
@@ -198,7 +198,7 @@
             "nombre_comun" : "Cactus de Galapagos",
             "nombre_cientifico" : "xxxxxxx",
             "dato" : "Resiste sequia",
-            "imagen" : "link_imagen"
+            "imagen" : "https://img.goraymi.com/2024/03/24/74954455ac7cd03f713756dfa7ef557a_xl.jpg"
         }
     },
     {
@@ -208,7 +208,7 @@
             "nombre_comun" : "Margarita de Galapagos",
             "nombre_cientifico" : "xxxxxxx",
             "dato" : "Evolucion",
-            "imagen" : "link_imagen"
+            "imagen" : "https://datazone.darwinfoundation.org/images/checklist/dsc05113.jpg"
         }
     },
     {

@@ -301,36 +301,72 @@
         "pk": 1,
         "fields":
             {
-                "nombre": "Los manglares",
-                "descripcion": "Las islas Galápagos son las únicas islas volcánicas en el Pacífico Este en donde los manglares se encuentran de manera natural. Los científicos de la FCD utilizaron imágenes de satélite para cartografiar la distribución de estos manglares en todo el archipiélago, y estimaron que están presentes en aproximadamente un tercio de todas las zonas costeras. A pesar de la importancia de estos ecosistemas, hasta la fecha existía poca información sobre las especies de peces que los utilizan a lo largo del archipiélago y su importancia como zonas de crianza para especies de interés socioeconómico. Los trabajos anteriores sobre los manglares de las Galápagos se han centrado en gran medida en las islas habitadas del archipiélago o en un subconjunto de especies. El presente estudio se basa en estos trabajos anteriores para ampliar nuestra comprensión de la importancia de estos hábitats y contribuir al desarrollo de estrategias y políticas que puedan proteger estas zonas de forma más eficaz.",
-                "imagen": "https://www.darwinfoundation.org/media/images/Mangroves_are_considered_an_oasis_for_life.max-1000x1000.jpg"
+                "nombre": "Manglares",
+                "descripcion": "Cada vez más a los manglares se los reconoce como uno de los ecosistemas más productivos en la Tierra, en vista de los múltiples beneficios o servicios ecosistémicos que ellos proveen para las comunidades costeras y para los humanos en general (McNally et al. 2011). Por ejemplo, el 80% de las capturas pesqueras mundiales están directa- o indirectamente vinculadas con los ecosistemas de manglares (Ellison 2008). Los manglares también son desproporcionalmente importantes para el almacenamiento del carbono global a la par que los bosques tropicales más ricos en carbono del mundo (Donato et al. 2011). Y los manglares dan soporte a las industrias turísticas, al brindar oportunidades recreacionales, y al contribuir a la purificación del agua y protección de las costas, lo cual es crucial para el mantenimiento de aguas claras y playas de arena (Lau 2013). En Belice, por ejemplo, investigadores estiman la contribución de los manglares al turismo en más de US$60 millones por año.",
+                "imagen": "https://reports.galapagos.org/wp-content/uploads/2022/10/Figure1.jpg"
             }
     },
     {   "model": "app.Ecosistema",
         "pk": 2,
         "fields":
             {
-                "nombre": "Rayas doradas",
-                "descripcion": "Es conocido que los manglares proporcionan un hábitat crítico a los peces a lo largo de su ciclo vital",
-                "imagen": "https://www.darwinfoundation.org/media/images/Mangroves_are_considered_an_oasis_for_life.max-1000x1000.jpg"
+                "nombre": "Playas",
+                "descripcion": "Las playas de Galápagos son ecosistemas altamente sensibles y de gran importancia ecológica. Estas áreas costeras no solo son hermosos destinos turísticos, sino que también desempeñan un papel crucial en la preservación de la biodiversidad del archipiélago.Su estratégica ubicación en la confluencia de varias corrientes marinas genera una mezcla de aguas frías y cálidas, lo que ha permitido la llegada y establecimiento de especies de diferentes zonas del océano Pacífico.La reserva es un santuario vital para la vida marina, albergando montes submarinos, afloramientos de nutrientes y una increíble abundancia de plancton.En sus aguas, se pueden observar tiburones martillo, tiburones ballena, mantarrayas, arrecifes de coral y peces de todos los colores.Además, los humedales del sur de la isla Isabela también desempeñan un papel crucial en la biodiversidad de Galápagos, siendo áreas importantes de alimentación y reproducción para especies como el pingüino de Galápagos y la gaviota de lava.",
+                "imagen": "http://areasprotegidas.ambiente.gob.ec/sites/default/files/area02-222.jpg"
             }
     },
     {   "model": "app.Ecosistema",
     "pk": 3,
     "fields":
         {
-            "nombre": "Evaluacion",
-            "descripcion": "Gracias a este estudio podemos concluir que los manglares en el archipiélago",
-            "imagen": "https://www.darwinfoundation.org/media/images/Mangroves_are_considered_an_oasis_for_life.max-1000x1000.jpg"
+            "nombre": "Bosques Secos",
+            "descripcion": "Los bosques secos en las Islas Galápagos son ecosistemas frágiles y de gran valor ecológico. A pesar de su apariencia árida y resistente, estos bosques albergan una diversidad de especies únicas y juegan un papel crucial en el equilibrio ambiental del archipiélago. Mediante este crecimiento lento y debido a la rápida comprensión del importante valor económico, cultural, científico y estético de la biología única de estas islas, en 1959, el 97% de toda la tierra se declaró como protegida bajo el Parque Nacional Galápagos. Aunque cuidadosamente protegidas y limitadas en el contacto humano, estas islas han enfrentado impactos del desarrollo humano y de especies introducidas como cabras y plantas invasoras. La Fundación Charles Darwin (FCD) se dedica a estudiar los ecosistemas de Galápagos para garantizar que podamos hacer todo lo que esté a nuestro alcance para proteger lo que aún está prístino y revertir cualquier daño que ya se haya causado.",
+            "imagen": "https://www.darwinfoundation.org/media/images/imagesnews20200611_salvandoPlaya_Tortuga_N.max-1000x1000.jpg"
         }
     },
     {   "model": "app.Ecosistema",
     "pk": 4,
     "fields":
         {
-            "nombre": "Juveniles de peces",
-            "descripcion": "A pesar de la importancia ecológica y socioeconómica de los manglares en el archipiélago",
-            "imagen": "https://www.darwinfoundation.org/media/images/Mangroves_are_considered_an_oasis_for_life.max-1000x1000.jpg"
+            "nombre": "Bosques de Scalesia",
+            "descripcion": "Estos bosques son exclusivos a las Islas Galápagos y forman la zona de Scalesia. El árbol de la margarita es la más grande, y suele llegar a ser hasta 15 metros de alto. Los árboles de la misma especie y la misma edad crecen en parches del bosque, y viven por hasta 25 años. Durante algunos eventos climáticos estresantes, como la sequía o lluvias extremas, todos los árboles de un bosque pueden morir al mismo tiempo, esto se llama ‘muerte regresiva’. Después de esto, plántulas comienzan a germinar en el espacio que antes ocupaban los árboles grandes. Estos bosques son el hogar de fauna espectacular incluyendo la icónica tortuga gigante de Galápagos y muchas especies de aves como la paloma de Galápagos, pinzones de Darwin y papamoscas. Sin embargo, estos bosques están bajo una intensa amenaza de las especies invasoras y la deforestación. Hoy en día, sólo unos pocos parches aislados de bosque permanecen mientras que el resto han sido destruidos.",
+            "imagen": "http://blog.discoveringgalapagos.org.uk/wp-content/uploads/2014/11/2.b.-Scalesia-forest-GCT-resize.jpg"
+        }
+    },
+{   "model": "app.Ecosistema",
+        "pk": 5,
+        "fields":
+            {
+                "nombre": "Arrecifes de Coral",
+                "descripcion": "Los corales son animales que se anclan a rocas donde permanecen inmóviles. Están formados por un esqueleto de carbonato de calcio y producen pigmentos al estar expuestos a la luz solar que es lo que genera esa variedad de colores tan alucinante de los arrecifes. Estos microorganismos  les proveen de nutrientes esenciales gracias al proceso de fotosíntesis que realizan, pero el estrés que provoca el cambio de temperatura y pH del océano en los corales hace que expelen a las algas adheridas. En consecuencia, pierden su color y el acceso a nutrientes que éstas les proveen, con lo cual los corales blanqueados mueren. El cambio climático, innegablemente impacta la biodiversidad del planeta. En el caso de los ecosistemas marinos tropicales, la presencia del fenómeno de El Niño calienta la superficie del océano Pacífico, especialmente en el ecuador y a lo largo de las costas de América del Sur y Central.Por eso, acciones urgentes de mitigación son esenciales.",
+                "imagen": "https://iucn.org/sites/default/files/styles/article_image/public/2023-07/whatsapp-image-2023-07-10-at-12.04.44.jpeg?h=7a91d091&itok=pHj7Em1i"
+            }
+    },
+    {   "model": "app.Ecosistema",
+        "pk": 6,
+        "fields":
+            {
+                "nombre": "Zonas - Alta Montaña",
+                "descripcion": "Las zonas de alta montaña en las Islas Galápagos son ecosistemas sensibles que juegan un papel crucial en la biodiversidad y la regulación climática del archipiélago. Estos hábitats, ubicados en las elevaciones más altas de islas como Isabela y Santa Cruz, albergan especies endémicas que dependen de las condiciones frescas y húmedas para sobrevivir. Las plantas en estas áreas, como las especies de Scalesia, capturan la humedad de la niebla, esencial para el abastecimiento de agua dulce en las islas. Sin embargo, estos ecosistemas enfrentan amenazas significativas, como el cambio climático, que puede alterar los patrones de precipitación y temperatura, y la invasión de especies exóticas que compiten con la flora y fauna nativa. La conservación de estas zonas es vital para mantener el equilibrio ecológico en Galápagos, protegiendo tanto la biodiversidad única como los recursos hídricos de las islas.",
+                "imagen": "https://3.bp.blogspot.com/-Qhc-atoEUcE/XIf9lBhgLQI/AAAAAAAAEJE/rQ3memFl-A8WZ2qjQ-2hRlohR0B90nwLACLcBGAs/s1600/ecuador7.jpg"
+            }
+    },
+    {   "model": "app.Ecosistema",
+    "pk": 7,
+    "fields":
+        {
+            "nombre": "Humedales",
+            "descripcion": "Los humedales en Galápagos son ecosistemas extremadamente sensibles y de gran importancia ecológica. Son refugios vitales para especies endémicas como el flamingo de Galápagos y diversas aves acuáticas, reptiles y plantas adaptadas a condiciones salinas. Sin embargo, los humedales enfrentan varias amenazas, como la contaminación, la alteración del flujo de agua debido a la construcción de infraestructura, y la invasión de especies exóticas que pueden competir con la flora y fauna nativa. El cambio climático también representa un peligro, con el aumento del nivel del mar y la alteración de las precipitaciones que pueden cambiar la dinámica de estos frágiles ecosistemas. La protección de los humedales en Galápagos es crucial para mantener la biodiversidad y los servicios ecosistémicos que brindan, esenciales para la salud ambiental del archipiélago.",
+            "imagen": "https://imgs.mongabay.com/wp-content/uploads/sites/25/2017/10/18220753/Humedales-galapagos-isabela-750x512.jpg"
+        }
+    },
+    {   "model": "app.Ecosistema",
+    "pk": 8,
+    "fields":
+        {
+            "nombre": "Islotes Rocosos",
+            "descripcion": "Los islotes rocosos en Galápagos son ecosistemas altamente sensibles que desempeñan un papel vital en la biodiversidad del archipiélago. Estas formaciones rocosas emergentes son refugios cruciales para aves marinas como piqueros, gaviotas y cormoranes, que los utilizan para anidar y descansar. Además, los islotes ofrecen hábitats para especies endémicas de reptiles y plantas que han adaptado su supervivencia a condiciones extremas de salinidad y escasez de agua. Sin embargo, su fragilidad es evidente ante amenazas como la introducción de especies invasoras, que pueden depredar los huevos y desplazar la fauna nativa. También son vulnerables a la erosión acelerada por el cambio climático y a la presión del turismo no regulado, que puede perturbar los hábitats críticos. La conservación de estos islotes es esencial para proteger las especies que dependen de ellos, así como para mantener el equilibrio ecológico en las Galápagos, asegurando su preservación a largo plazo.",
+            "imagen": "https://2.bp.blogspot.com/-Z4ffvEOUZWM/UzRRaJ4b3gI/AAAAAAAAvbQ/2XaozfpDtzo/s1600/rocas+bainbridge+ecuador+galapagos.jpg"
         }
     },
     {

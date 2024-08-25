@@ -361,7 +361,7 @@
         "kind": 6,
         "importPath": "app.models",
         "description": "app.models",
-        "peekOfCode": "class Actividad(models.Model):\n    nombre = models.CharField(max_length=20)\n    direccion = models.CharField(max_length=100)\n    hora_inicio = models.TimeField()\n    hora_fin = models.TimeField()\n    edad = models.IntegerField()\n    precio = models.DecimalField(max_digits=10, decimal_places=2)\n    isla = models.ForeignKey(Isla, on_delete=models.CASCADE)\n    class Meta:\n        db_table = 'actividad'",
+        "peekOfCode": "class Actividad(models.Model):\n    nombre = models.CharField(max_length=20)\n    direccion = models.CharField(max_length=100)\n    hora_inicio = models.TimeField()\n    hora_fin = models.TimeField()\n    edad = models.IntegerField()\n    precio = models.DecimalField(max_digits=10, decimal_places=2)\n    isla = models.ForeignKey(Isla, on_delete=models.CASCADE)\n    imagen = models.CharField(max_length=500)\n    class Meta:",
         "detail": "app.models",
         "documentation": {}
     },

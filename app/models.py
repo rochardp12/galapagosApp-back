@@ -78,6 +78,7 @@ class Actividad(models.Model):
     edad = models.IntegerField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     isla = models.ForeignKey(Isla, on_delete=models.CASCADE)
+    imagen = models.CharField(max_length=500)
 
     class Meta:
         db_table = 'actividad'

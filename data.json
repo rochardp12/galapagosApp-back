@@ -12,11 +12,13 @@
         "pk": 1,
         "fields": {
             "nombre": "ISABELA",
-            "calificacion_tres" : 0,
-            "calificacion_dos" : 0,
-            "calificacion_uno" : 0,
-            "descripcion" : "La isla Isabela, una isla muy bonita",
-            "imagen" : "https://www.galapatours.com/_next/image?url=https%3A%2F%2Fmedia.venturatravel.org%2Funsafe%2F1300x%2Fsmart%2Fgal%2Fdestination%2Fisabela.jpg&w=3840&q=75"
+            "calificacion_uno": 1,
+            "calificacion_dos": 1,
+            "calificacion_tres": 50,
+            "descripcion": "Albemarle en inglés.;Isla más grande 4588 km2.; 2.344 habitantes (2015).;Punto más alto: volcán Wolf 1.707 m. ;Animales: Tortugas gigantes, pingüinos, cormoranes, iguanas marinas, iguanas terrestres, lobos marinos, pelícanos, cangrejos rojos, pinzones, flamencos, halcones y palomas.;Puntos de interés: muro de las lágrimas, laguna flamingo, Tagus Cove, Bahía Urbina, Punta Vicente Roca, Bahía Elizabeth, Las Tintoreras; Activitades: caminatas, paseos en bote, observación de aves, observación de tortugas, buceo/snorkel;Ciudad principal: Puerto Villamil.",
+            "imagen":
+                "https://i0.wp.com/ecuadorgalapagosinfo.com/wp-content/uploads/2023/04/los-tuneles-isabela278091723.jpeg?w=800&ssl=1"
+
         }
     },
     {
@@ -24,23 +26,71 @@
         "pk": 2,
         "fields": {
             "nombre": "SANTA CRUZ",
-            "calificacion_tres" : 0,
-            "calificacion_dos" : 0,
-            "calificacion_uno" : 0,
-            "descripcion" : "La isla Santa Cruz, una isla muy bonita",
-            "imagen" : "https://quitotourbus.com/wp-content/uploads/2022/12/Que-hacer-en-la-Isla-Santa-Cruz-Galapagos.jpg"
+            "calificacion_tres" : 1,
+            "calificacion_dos" : 3,
+            "calificacion_uno" : 6,
+            "descripcion" : "Indefatigable en inglés.; 986 km2, segunda isla más grande de Galápagos;15701 habitantes.;Punto más alto 864 m (Cerro Crocker).; Animales: Iguanas, Tiburones de arrecife de punta blanca, tortugas gigantes de Galápagos, lobos marinos, Piquero de patas azules, Garza azulada, fragata común, cucuve, cangrejo violinista.; Lugares de interés: Bahia Tortuga, Canal de Itabaca, Estación científica Charles Darwin, túneles de lava, las grietas, Caleta Tortuga Negra, Cerro Dragón.",
+            "imagen" : "https://i0.wp.com/ecuadorgalapagosinfo.com/wp-content/uploads/2019/02/tortugas-estacion-charles-darwin.jpg?w=800&ssl=1"
         }
     },
     {
         "model": "app.Isla",
         "pk": 3,
         "fields": {
+            "nombre": "FERNANDINA",
+            "calificacion_tres" : 100,
+            "calificacion_dos" : 6,
+            "calificacion_uno" : 1,
+            "descripcion" : "Narborough en inglés.; Tercer isla más grande, superficie de 642 km2.;0 habitantes; 1494 m punto más alto: La Cumbre.;Animales: Pingüinos, lobos marinos, cormoranes, pelícanos, iguanas marinas, iguanas terrestres.;Lugares de interés: Punta Espinoza.",
+            "imagen" : "https://i0.wp.com/ecuadorgalapagosinfo.com/wp-content/uploads/2019/03/lobos-marinos-iguanas.jpg?w=800&ssl=1"
+        }
+    },
+    {
+        "model": "app.Isla",
+        "pk": 4,
+        "fields": {
+            "nombre": "SANTIAGO",
+            "calificacion_tres" : 1,
+            "calificacion_dos" : 2,
+            "calificacion_uno" : 1,
+            "descripcion" : "James Island en inglés.;Superficie: 585 km2.; 172 habitantes;Punto más alto: 907m.;Animales: Tortugas gigantes, iguanas marinas, lobos marinos, focas peleteras, tortugas terrestres, tortugas marinas, flamencos, delfines, tiburones.;Puntos de Interés: Bahía James, Bahía Sullivan, Cousins Rock, Puerto Egas.",
+            "imagen" : "https://i0.wp.com/ecuadorgalapagosinfo.com/wp-content/uploads/2023/05/puerto-egas.jpeg?w=800&ssl=1"
+        }
+    },
+    {
+        "model": "app.Isla",
+        "pk": 5,
+        "fields": {
             "nombre": "SAN CRISTOBAL",
-            "calificacion_tres" : 0,
-            "calificacion_dos" : 0,
-            "calificacion_uno" : 0,
-            "descripcion" : "La isla San Cristobal, una isla muy bonita",
-            "imagen" : "https://happygringo.com/wp-content/uploads/2021/02/witch-hill-san-cristobal.jpg"
+            "calificacion_tres" : 2,
+            "calificacion_dos" : 1,
+            "calificacion_uno" : 5,
+            "descripcion" : "Chatman en inglés.;Superficie: 558 km2.;5.600 habitantes.;Punto más alto: 730m.;Animales: fragatas, lobos marinos, tortugas gigantes, iguanas marinas, delfines, alcatraces patirrojos, alcatraces patas azules.;Puntos de interés: Laguna El Junco, La Galapaguera, La Lobería (colonia de lobos marinos), Cerro Tijeretas, Estación Biológica San Cristóbal, estatua de Charles Darwin, Leon Dormido (Kickers Rock), Isla Lobos, Cerro Brujo, Cerro Colorado.",
+            "imagen" : "https://i0.wp.com/ecuadorgalapagosinfo.com/wp-content/uploads/2020/01/leon-dormido-2.jpg?w=800&ssl=1"
+        }
+    },
+    {
+        "model": "app.Isla",
+        "pk": 6,
+        "fields": {
+            "nombre": "SANTA FE",
+            "calificacion_tres" : 5,
+            "calificacion_dos" : 2,
+            "calificacion_uno" : 10,
+            "descripcion" : "Barrington en inglés .;Superficie: 24 km2.; 0 habitantes.;Altitud máxima: 259 m.;Animales: Iguana terrestre, lagartija de lava, lobos marinos, petreles, gaviotas.;Puntos de interés: bosques de cactus gigantes.",
+            "imagen" : "https://i0.wp.com/ecuadorgalapagosinfo.com/wp-content/uploads/2019/07/iguana-marina-santa-fe.jpg?w=800&ssl=1"
+        }
+    },
+    {
+        "model": "app.Isla",
+        "pk": 7,
+        "fields": {
+            "nombre": "FLOREANA",
+            "calificacion_tres" : 1,
+            "calificacion_dos" : 5,
+            "calificacion_uno" : 1,
+            "descripcion" : "Charles Island en inglés.;Superficie: 173 km2.;188 habitantes.;Punto más alto: Cerro Pajas (640m).; Animales: Pingüinos, Flamencos rosados, Tortugas marinas.; Puntos de interés: Bahía de Correos (barril de correo), Corona del Diablo, Cormorant Point, Islote Campéon (para snorkel)",
+            "imagen" : "https://i0.wp.com/ecuadorgalapagosinfo.com/wp-content/uploads/2019/07/piquero-patas-azules.jpg?w=800&ssl=1"
         }
     },
     {
@@ -252,7 +302,7 @@
         "fields":
             {
                 "nombre": "Los manglares",
-                "descripcion": "Las islas Galápagos son las únicas islas volcánicas en el Pacífico Este en donde los manglares se encuentran de manera natural.",
+                "descripcion": "Las islas Galápagos son las únicas islas volcánicas en el Pacífico Este en donde los manglares se encuentran de manera natural. Los científicos de la FCD utilizaron imágenes de satélite para cartografiar la distribución de estos manglares en todo el archipiélago, y estimaron que están presentes en aproximadamente un tercio de todas las zonas costeras. A pesar de la importancia de estos ecosistemas, hasta la fecha existía poca información sobre las especies de peces que los utilizan a lo largo del archipiélago y su importancia como zonas de crianza para especies de interés socioeconómico. Los trabajos anteriores sobre los manglares de las Galápagos se han centrado en gran medida en las islas habitadas del archipiélago o en un subconjunto de especies. El presente estudio se basa en estos trabajos anteriores para ampliar nuestra comprensión de la importancia de estos hábitats y contribuir al desarrollo de estrategias y políticas que puedan proteger estas zonas de forma más eficaz.",
                 "imagen": "https://www.darwinfoundation.org/media/images/Mangroves_are_considered_an_oasis_for_life.max-1000x1000.jpg"
             }
     },
@@ -262,7 +312,7 @@
             {
                 "nombre": "Rayas doradas",
                 "descripcion": "Es conocido que los manglares proporcionan un hábitat crítico a los peces a lo largo de su ciclo vital",
-                "imagen": "https://www.darwinfoundation/"
+                "imagen": "https://www.darwinfoundation.org/media/images/Mangroves_are_considered_an_oasis_for_life.max-1000x1000.jpg"
             }
     },
     {   "model": "app.Ecosistema",
@@ -271,7 +321,7 @@
         {
             "nombre": "Evaluacion",
             "descripcion": "Gracias a este estudio podemos concluir que los manglares en el archipiélago",
-            "imagen": "https://www.darwinfoundation.org/"
+            "imagen": "https://www.darwinfoundation.org/media/images/Mangroves_are_considered_an_oasis_for_life.max-1000x1000.jpg"
         }
     },
     {   "model": "app.Ecosistema",
@@ -280,7 +330,7 @@
         {
             "nombre": "Juveniles de peces",
             "descripcion": "A pesar de la importancia ecológica y socioeconómica de los manglares en el archipiélago",
-            "imagen": "https://www.darwinfoundation.org/media/images/Juvenile_fish_among_mangrove_roots.max-1000x1000.jpg"
+            "imagen": "https://www.darwinfoundation.org/media/images/Mangroves_are_considered_an_oasis_for_life.max-1000x1000.jpg"
         }
     },
     {

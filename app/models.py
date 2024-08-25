@@ -12,7 +12,7 @@ class Isla(models.Model):
     calificacion_tres = models.IntegerField()
     calificacion_dos = models.IntegerField()
     calificacion_uno = models.IntegerField()
-    descripcion = models.CharField(max_length=300)
+    descripcion = models.CharField(max_length=600)
     imagen = models.CharField(max_length=500)
     
     class Meta:
@@ -94,7 +94,7 @@ class GuiasTuristicos(models.Model):
 
 class Ecosistema(models.Model):
     nombre = models.CharField(max_length=20)
-    descripcion = models.CharField(max_length=200)
+    descripcion = models.CharField(max_length=1000)
     imagen = models.CharField(max_length=500)
     class Meta:
         db_table = 'ecosistema'

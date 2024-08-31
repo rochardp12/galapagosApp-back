@@ -32,7 +32,7 @@ class UsuarioViewSet(viewsets.ModelViewSet):
             if not data.exists():
                 return Response({"error": "Usuario no existente"}, status=status.HTTP_404_NOT_FOUND)
             else:
-                data = UsuarioPasswordSerializer(data, many=True).data
+                data = UsuarioSerializer(data, many=True).data
                 return Response(data, status=status.HTTP_200_OK)
             
 class IslaViewSet(viewsets.ModelViewSet):

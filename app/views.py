@@ -48,32 +48,6 @@ class IslaViewSet(viewsets.ModelViewSet):
                 data = IslaSerializer(data, many=True).data
                 return Response(data, status=status.HTTP_200_OK)
 
-    @action(detail=False, methods=['put'], url_path=r'(?P<id_isla>\d+)/actualizar_puntuacion/(?P<puntuacion>\d+)', url_name='actualizar_puntuacion')
-    def actualizar_puntuacion(self, request, id_isla, puntuacion):
-        data = Isla.objects.filter(id=id_isla)
-        if not data.exists():
-            return Response({"error": "Isla no encontrada"}, status=status.HTTP_404_NOT_FOUND)
-        else:
-            isla = data.first()
-            try:
-                puntuacion = int(puntuacion)
-            except ValueError:
-                return Response({"error": "Puntuación no válida"}, status=status.HTTP_400_BAD_REQUEST)
-            
-            if puntuacion < 1 or puntuacion > 3:
-                return Response({"error": "Puntuación debe ser 1, 2 o 3"}, status=status.HTTP_400_BAD_REQUEST)
-            
-            if puntuacion == 1:
-                isla.calificacion_uno += 1
-            elif puntuacion == 2:
-                isla.calificacion_dos += 1
-            elif puntuacion == 3:
-                isla.calificacion_tres += 1
-            
-            isla.save()
-            
-            return Response({"mensaje": "Puntuación actualizada correctamente"}, status=status.HTTP_200_OK)
-
 class TipoNegocioViewSet(viewsets.ModelViewSet):
     queryset = TipoNegocio.objects.all()
     serializer_class = TipoNegocioSerializer
@@ -266,11 +240,41 @@ class ComentarioViewSet(viewsets.ModelViewSet):
         serializado = ComentarioSerializer(comentario).data
         return Response(serializado, status=status.HTTP_201_CREATED)
 
+def actualizar_calificaciones(isla, usuario, puntuacion):
+    c1 = isla.calificacion_uno
+    c2 = isla.calificacion_dos
+    c3 = isla.calificacion_tres
+    
+    calificacion_anterior = Calificacion.objects.filter(isla=isla, usuario=usuario).first()
+    if puntuacion == 1:
+        c1 += 1
+        if calificacion_anterior.puntuacion == 2:
+            c2 -= 1
+        elif calificacion_anterior.puntuacion == 3:
+            c3 -= 1
+    elif puntuacion == 2:
+        c2 += 1
+        if calificacion_anterior.puntuacion == 1:
+            c1 -= 1
+        elif calificacion_anterior.puntuacion == 3:
+            c3 -= 1
+    elif puntuacion == 3:
+        c3 += 1
+        if calificacion_anterior.puntuacion == 1:
+            c1 -= 1
+        elif calificacion_anterior.puntuacion == 2:
+            c2 -= 1
+
+    isla.calificacion_uno = c1
+    isla.calificacion_dos = c2
+    isla.calificacion_tres = c3
+    isla.save()
+     
 class CalificacionViewSet(viewsets.ModelViewSet):
     queryset = Calificacion.objects.all()
     serializer_class = CalificacionSerializer
     #katherine tumbaco
-    @action(detail=False, methods=['get'], url_path=r'usuario/(?P<id_usuario>\w+)/isla/(?P<id_isla>\w+)', url_name='obtener_celificacion_usuario')
+    @action(detail=False, methods=['get'], url_path=r'usuario/(?P<id_usuario>\d+)/isla/(?P<id_isla>\d+)', url_name='obtener_celificacion_usuario')
     def obtener_calificacion_usuario(self, request,id_usuario,id_isla):
             data = Calificacion.objects.filter(usuario_id=id_usuario, isla_id=id_isla)
             if not data.exists():
@@ -279,48 +283,53 @@ class CalificacionViewSet(viewsets.ModelViewSet):
                 data = CalificacionSerializer(data, many=True).data
                 return Response(data, status=status.HTTP_200_OK)
                
-    @action(detail=False, methods=['post'], url_path=r'registrar_calificacion')
-    def registrar_calificacion(self, request):        
-        voto = request.data['voto']
-        puntuacion =  request.data['puntuacion']
-        id_isla = request.data['isla']
-        id_usuario = request.data['usuario']
-       
-        
-        isla = Isla.objects.filter(Q(id=id_isla))
-        if not isla.exists():
-            return Response({"error": "Isla no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+    @action(detail=False, methods=['post'], url_path='registrar_calificacion', url_name='registrar_calificacion')
+    def registrar_calificacion(self, request):
+        voto = request.data.get('voto', False)
+        puntuacion = request.data.get('puntuacion')
+        id_isla = request.data.get('isla')
+        id_usuario = request.data.get('usuario')
 
-        usuario = Usuario.objects.filter(Q(id=id_usuario))
-        if not usuario.exists():
-            return Response({"error": "Usuario no encontrado"}, status=status.HTTP_404_NOT_FOUND)
-        
-        isla = isla.first()
-        usuario = usuario.first()
+        if not all([voto is not None, puntuacion is not None, id_isla is not None, id_usuario is not None]):
+            return Response({"error": "Todos los campos son necesarios"}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
             puntuacion = int(puntuacion)
         except ValueError:
             return Response({"error": "Puntuación no válida"}, status=status.HTTP_400_BAD_REQUEST)
-            
+
         if puntuacion < 1 or puntuacion > 3:
             return Response({"error": "Puntuación debe ser 1, 2 o 3"}, status=status.HTTP_400_BAD_REQUEST)
-            
-        if puntuacion == 1:
-            isla.calificacion_uno += 1
-        elif puntuacion == 2:
-            isla.calificacion_dos += 1
-        elif puntuacion == 3:
-            isla.calificacion_tres += 1
-            
-        isla.save()
 
-        calificacion = Calificacion.objects.create(
+        isla = Isla.objects.filter(id=id_isla).first()
+        if not isla:
+            return Response({"error": "Isla no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+
+        usuario = Usuario.objects.filter(id=id_usuario).first()
+        if not usuario:
+            return Response({"error": "Usuario no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+
+        calificacion = Calificacion.objects.filter(usuario_id=id_usuario, isla_id=id_isla).first()
+
+        if calificacion:
+            if voto:
+                actualizar_calificaciones(isla,usuario, puntuacion)
+                calificacion.puntuacion = puntuacion
+                calificacion.save()
+                return Response({"mensaje": "Calificación actualizada correctamente"}, status=status.HTTP_200_OK)
+            else:
+                return Response({"error": "Ya has calificado esta isla"}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            if voto:
+                calificacion = Calificacion.objects.create(
                     voto=voto,
                     puntuacion=puntuacion,
-                    usuario = usuario,
-                    isla = isla
-                )      
-            
-        serializado = CalificacionSerializer(calificacion).data
-        return Response(serializado, status=status.HTTP_201_CREATED)
+                    usuario=usuario,
+                    isla=isla,
+                )
+                actualizar_calificaciones(isla,usuario, puntuacion)
+                serializado = CalificacionSerializer(calificacion).data
+                return Response(serializado, status=status.HTTP_201_CREATED)
+            else:
+                return Response({"error": "No puedes registrar una calificación sin voto"}, status=status.HTTP_400_BAD_REQUEST)   
+

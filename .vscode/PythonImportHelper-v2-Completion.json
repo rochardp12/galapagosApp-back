@@ -640,7 +640,16 @@
         "kind": 6,
         "importPath": "app.views",
         "description": "app.views",
-        "peekOfCode": "class CalificacionViewSet(viewsets.ModelViewSet):\n    queryset = Calificacion.objects.all()\n    serializer_class = CalificacionSerializer\n    #katherine tumbaco\n    @action(detail=False, methods=['get'], url_path=r'usuario/(?P<id_usuario>\\w+)/isla/(?P<id_isla>\\w+)', url_name='obtener_celificacion_usuario')\n    def obtener_calificacion_usuario(self, request,id_usuario,id_isla):\n            data = Calificacion.objects.filter(usuario_id=id_usuario, isla_id=id_isla)\n            if not data.exists():\n                return Response({\"error\": \"Calificacion no encontrada\"}, status=status.HTTP_404_NOT_FOUND)\n            else:",
+        "peekOfCode": "class CalificacionViewSet(viewsets.ModelViewSet):\n    queryset = Calificacion.objects.all()\n    serializer_class = CalificacionSerializer\n    #katherine tumbaco\n    @action(detail=False, methods=['get'], url_path=r'usuario/(?P<id_usuario>\\d+)/isla/(?P<id_isla>\\d+)', url_name='obtener_celificacion_usuario')\n    def obtener_calificacion_usuario(self, request,id_usuario,id_isla):\n            data = Calificacion.objects.filter(usuario_id=id_usuario, isla_id=id_isla)\n            if not data.exists():\n                return Response({\"error\": \"Calificacion no encontrada\"}, status=status.HTTP_404_NOT_FOUND)\n            else:",
+        "detail": "app.views",
+        "documentation": {}
+    },
+    {
+        "label": "actualizar_calificaciones",
+        "kind": 2,
+        "importPath": "app.views",
+        "description": "app.views",
+        "peekOfCode": "def actualizar_calificaciones(isla, usuario, puntuacion):\n    c1 = isla.calificacion_uno\n    c2 = isla.calificacion_dos\n    c3 = isla.calificacion_tres\n    calificacion_anterior = Calificacion.objects.filter(isla=isla, usuario=usuario).first()\n    if puntuacion == 1:\n        c1 += 1\n        if calificacion_anterior.puntuacion == 2:\n            c2 -= 1\n        elif calificacion_anterior.puntuacion == 3:",
         "detail": "app.views",
         "documentation": {}
     },

@@ -123,20 +123,22 @@
             "hora_fin" : "21:00",
             "edad" : 21,
             "precio" : 20.85,
-            "isla" : 2
+            "isla" : 1,
+            "imagen" : "https://latintrails.com/wp-content/uploads/2018/08/galapagos-adventure-latin-trails1.jpg"
         }
     },
     {
         "model": "app.Actividad",
         "pk": 2,
         "fields": {
-            "nombre" : "Concurso de surf",
+            "nombre" : "Senderismo",
             "direccion" : "Isla San Cristobal",
             "hora_inicio" : "9:30",
             "hora_fin" : "15:30",
             "edad" : 25,
             "precio" : 5.50,
-            "isla" : 3
+            "isla" : 5,
+            "imagen": "https://naturegalapagos.com/es/wp-content/uploads/sites/3/2018/12/que-hacer-en-isla-isabela-galapagos-feat.jpg"
         }
     },
     {
@@ -146,7 +148,7 @@
             "nombre" : "Guia 01",
             "edad" : 25,
             "telefono" : "0987654321",
-            "imagen" : "link_imagen",
+            "imagen" : "https://static.vecteezy.com/system/resources/previews/014/288/076/non_2x/tourist-city-guide-with-flag-icon-cartoon-style-vector.jpg",
             "isla" : 1
         }
     },
